@@ -1,10 +1,7 @@
 
 'use client'
-import { BiSolidBot } from 'react-icons/bi';
-import { useState } from 'react'
 import ChatBot from 'react-simple-chatbot';
 import { ThemeProvider } from 'styled-components';
-import Image from 'next/image';
 
 function customMessage(message: string, url: string) {
     return (
@@ -15,7 +12,7 @@ function customMessage(message: string, url: string) {
                 </div>
             </div>
             <div className="chat-bubble bg-[#EF6C00]">
-                <a className='link link-primary' target='_blank' href={url}> คลิกที่ลิงค์นี้</a>
+                <a className='link link-primary' target='_blank' href={url}> คลิกที่ลิงค์นี้...</a>
             </div>
         </div>
 
