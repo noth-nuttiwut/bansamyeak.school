@@ -1,7 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import 'react-chatbot-kit/build/main.css'
 import Image from 'next/image'
 import BannerPic from '../public/Banner-school_0.jpg'
 import ChatbotButton from '@/components/ChatbotButton'
