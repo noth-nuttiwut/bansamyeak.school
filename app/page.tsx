@@ -1,7 +1,6 @@
 import VideoCard from "@/components/VideoCard"
 export default function Home() {
   return (
-
     <main>
       <div className="flex min-h-screen flex-col items-center p-4 gap-6">
         <VideoCard 

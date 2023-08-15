@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import BannerPic from '../public/Banner-school_0.jpg'
-import ChatbotButton from '@/components/ChatbotButton'
 import SideBar from '@/components/SideBar'
 import SYFooter from '@/components/SYFooter'
 import Link from 'next/link'
@@ -45,11 +44,6 @@ export default function RootLayout({
             {children}
           </div>
         </div>
-
-        <div className='fixed z-90 bottom-10 right-8 '>
-          <ChatbotButton />
-        </div>
-
         < SYFooter />
       </body>
     </html>
