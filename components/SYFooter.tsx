@@ -6,7 +6,7 @@ import { HiOutlineMail } from 'react-icons/hi';
 
 export default function SYFooter() {
     return (
-        <footer className="footer footer-center p-10 bg-orange-600 text-white">
+        <footer className="footer footer-center p-4 bg-orange-600 text-white">
             <div>
                 <span className="footer-title text-lg">โซเชียลมีเดีย</span>
                 <div className="grid grid-flow-col gap-4">
