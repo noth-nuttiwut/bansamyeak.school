@@ -2,12 +2,11 @@ import { createChatBotMessage } from 'react-chatbot-kit';
 import BotOptions from './BotOptions';
 
 const config = {
-    botName: "สิริกัญญา",
     initialMessages: [
         createChatBotMessage("สวัสดี มีอะไรให้ฉันช่วยไหม", {
-            widget: "BotOptionsWidget",
-        })
-    ],
+          widget: "BOptions",
+        }),
+      ],
     customStyles: {
         botMessageBox: {
             backgroundColor: "#376B7E",
@@ -18,9 +17,13 @@ const config = {
     },
     widgets: [
         {
-            widgetName: "BotOptionsWidget",
-            widgetFunc: () => BotOptions,
+            widgetName: "BOptions",
+            widgetFunc: (props) => <BotOptions {...props} />
         },
+        {
+            widgetName: "Coptions",
+            widgetFunc: (props) => <Options {...props} />,
+          },
     ],
 };
 

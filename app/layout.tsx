@@ -7,6 +7,7 @@ import BannerPic from '../public/Banner-school_0.jpg'
 import ChatbotButton from '@/components/ChatbotButton'
 import SideBar from '@/components/SideBar'
 import SYFooter from '@/components/SYFooter'
+import Link from 'next/link'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,12 +25,15 @@ export default function RootLayout({
     <html lang="en" data-theme="corporate">
       <body className="flex flex-col">
         <div className="flex justify-center">
-          <Image
-            src={BannerPic}
-            alt="Top Banner"
-            priority={true}
-            height={330}
-          />
+          <Link href={"/"}>
+            <Image
+              src={BannerPic}
+              alt="Top Banner"
+              priority={true}
+              height={330}
+            />
+          
+          </Link>
 
 
         </div>

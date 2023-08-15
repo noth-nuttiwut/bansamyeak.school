@@ -3,14 +3,12 @@ import React from "react";
 
 const BotOptions = () => {
     const options = [
-        { text: "ข้อมูลของโรงเรียน", handler: () => { }, id: 1 },
-        { text: "ข้อมูลผู้บริหาร", handler: () => { }, id: 2 },
-        { text: "ที่อยู่ของโรงเรียน", handler: () => { }, id: 3 },
-        { text: "ติดต่อสอบถาม", handler: () => { }, id: 4 },
+        { text: "Q&A", handler: () => { }, id: 1 },
+        { text: "ช่องทางร้องเรียน", handler: () => { }, id: 2 },
     ];
 
     return (
-        <div className="flex flex-col gap-2 w-10/12">
+        <div className="flex flex-col gap-2">
             {
                 options.map((option) => (
                     <button
