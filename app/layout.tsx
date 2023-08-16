@@ -1,12 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import Image from 'next/image'
-import BannerPic from '../public/Banner-school_0.jpg'
 import SideBar from '@/components/SideBar'
 import SYFooter from '@/components/SYFooter'
 import Navbar from '@/components/NavBar'
-import Link from 'next/link'
+import CarouselBanner from '@/components/CarouselBanner'
 
 
 export const metadata: Metadata = {
@@ -25,18 +22,8 @@ export default function RootLayout({
       <body className="flex flex-col gap-2">
         <Navbar />
         <div className="flex justify-center">
-
-          <Link href={"/"}>
-            <Image
-              src={BannerPic}
-              alt="Top Banner"
-              priority={true}
-              placeholder="blur"
-              quality={100}
-            />
-          </Link>
+          <CarouselBanner />
         </div>
-
         <div className='flex justify-center flex-wrap'>
           <SideBar />
           {children}
