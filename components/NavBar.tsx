@@ -1,6 +1,8 @@
 
 import Image from "next/image"
+import Link from "next/link"
 import Logo from "@/public/logo.png"
+
 export default function Navbar() {
     return (
 
@@ -12,7 +14,7 @@ export default function Navbar() {
                     </label>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-orange-400 text-white rounded-box w-64">
                         <li className="p-2">
-                            <a>หน้าหลัก</a>
+                        <Link href="/">หน้าหลัก</Link>
                         </li>
                         <li className="p-2">
                             <a>คณะผู้บริหาร</a>
@@ -43,7 +45,7 @@ export default function Navbar() {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-white">
-                    <li><a>หน้าหลัก</a></li>
+                    <li><Link href="/">หน้าหลัก</Link></li>
                     <li><a>คณะผู้บริหาร</a></li>
                     <li><a>ข่าวประชาสัมพันธ์</a></li>
                     <li><a>ภาพกิจกรรม</a></li>
@@ -52,7 +54,7 @@ export default function Navbar() {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-orange-500 border-orange-500 text-white"> เข้าสู่ระบบ</a>
+                <a className="btn bg-orange-500 border-orange-500 text-white hover:bg-orange-400 hover:border-orange-400 hover:text-slate-800"> เข้าสู่ระบบ</a>
             </div>
         </div>
 

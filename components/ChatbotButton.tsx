@@ -26,10 +26,10 @@ export default function ChatbotButton() {
     const theme = {
         background: '#f5f8fb',
         fontFamily: 'Helvetica Neue',
-        headerBgColor: '#EF6C00',
+        headerBgColor: '#fb923c',
         headerFontColor: '#fff',
         headerFontSize: '15px',
-        botBubbleColor: '#EF6C00',
+        botBubbleColor: '#fb923c',
         botFontColor: '#fff',
         userBubbleColor: '#fff',
         userFontColor: '#4a4a4a',
@@ -54,13 +54,13 @@ export default function ChatbotButton() {
         },
         {
             id: '4',
-            component: customMessage("ไปที่ url...", "https://docs.google.com/forms/d/e/1FAIpQLScK8lEpJIA1eps9Qt-p9cEdvxsYerkS5nQcBa6_wGnDSLW9Ig/viewform?fbclid=IwAR1-8MsvyM-Jqi3bzxoLdz7qn21U60dR4r3t5OewaIPpMA0JjgTErv24W7o"),
+            component: customMessage("ไปที่ url นี้", "https://docs.google.com/forms/d/e/1FAIpQLScK8lEpJIA1eps9Qt-p9cEdvxsYerkS5nQcBa6_wGnDSLW9Ig/viewform?fbclid=IwAR1-8MsvyM-Jqi3bzxoLdz7qn21U60dR4r3t5OewaIPpMA0JjgTErv24W7o"),
             trigger: "2",
         },
         {
             id: '5',
             component: (
-                customMessage("ไปที่ url...", "https://docs.google.com/forms/d/e/1FAIpQLSd6PrtNT2ZN4GmG92yjgtUmKpNqIhWnS66JNRpelyCID_7AKA/viewform?fbclid=IwAR18B7nwkts3HLOAPHcdbgG_6B3_DUSeBAnkr2oceWaUeY1DKuCKv_iji2s")
+                customMessage("ไปที่ url นี้", "https://docs.google.com/forms/d/e/1FAIpQLSd6PrtNT2ZN4GmG92yjgtUmKpNqIhWnS66JNRpelyCID_7AKA/viewform?fbclid=IwAR18B7nwkts3HLOAPHcdbgG_6B3_DUSeBAnkr2oceWaUeY1DKuCKv_iji2s")
             ),
             trigger: "2",
         },
