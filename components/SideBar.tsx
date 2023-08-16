@@ -5,11 +5,11 @@ import 'react-calendar/dist/Calendar.css';
 import DirectorCard from './DirectorCard';
 import MenuButton from './MenuButton';
 import SimpleMap from './SimpleGGMap';
-// import ChatbotButton from './ChatbotButton';
+import ChatbotButton from './ChatbotButton';
 
 export default function SideBar() {
     return (
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2">
             <DirectorCard />
 
             <div>
@@ -28,9 +28,9 @@ export default function SideBar() {
                 <Calendar />
             </div>
             <SimpleMap />
-            {/* <div className='fixed z-90 bottom-10 right-8 '>
+            <div className='fixed z-90 bottom-10 right-8 '>
                 <ChatbotButton />
-            </div> */}
+            </div>
         </div>
     )
 }
