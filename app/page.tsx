@@ -18,21 +18,19 @@ import Banner1 from "@/public/Banner-ITA.jpg"
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-2 justify-center">
+    <div className="flex flex-col gap-2 justify-center bg-gradient-to-t from-orange-100 to-slate-100">
       <div className="flex justify-center items-center">
         <Image src={Banner1}
           alt="banner-1"
           objectFit="cover"
         />
       </div>
-      <div className="flex gap-1 justify-around">
-        <div className="flex min-h-screen">
+      <div className="flex justify-center">
+        <div className="flex w-2/12">
           <SideBar />
         </div>
-        <div>
-
-
-          <div className="flex min-h-screen flex-col items-center p-4 gap-6">
+        <div >
+          <div className="flex flex-col items-center p-4 gap-6">
             <MenuIcon iconAlt="ITA" iconUrl={iconITA} goTo={"/ITA/home"} menu="TA โรงเรียนบ้านสามแยก จังหวัดชลบุรี" width={600} height={600} />
 
             <VideoCard

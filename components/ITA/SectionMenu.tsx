@@ -21,11 +21,11 @@ const SectionMenu = (props: SectionProps) => {
      from-violet-700 to-pink-500 w-80 h-40 break-words rounded-r-xl rounded-b-xl`, props?.bgGradient ?? "")
     
     const codeCss = `flex justify-center items-center
-    text-white text-xl text-center font-bold p-8 bg-slate-700 w-8 h-8 rounded-l-xl`
+    text-white text-xl text-center font-bold p-6 bg-slate-700 w-6 h-6 rounded-l-xl`
     return (
-        <div>
-            <div className="divider text-lg">{props.sectionName}</div>
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="px-10">
+            <div className="divider text-lg text-slate-600">{props.sectionName}</div>
+            <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
                 {
                     props.items.map(item => {
                         return (

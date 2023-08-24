@@ -1,17 +1,17 @@
 "use client"
 import Image from "next/image";
-import BannerImage from "@/public/SchoolNameBanner.jpg"
+import BannerImage from "@/public/SchoolInfoBanner.jpg"
 import Link from "next/link";
 
 type MenuProps = {
     title: string
 }
 
-const ITABanner = (props: MenuProps) => {
+const SchoolBanner = (props: MenuProps) => {
     return (
         <div className="flex flex-col items-center justify-center">
-            <Link href={"/ITA/home"}>
-                <div className="flex h-[35vh] bg-gradient-to-r from-violet-900 via-purple-600 to-pink-50">
+            <Link href={"/history"}>
+                <div className="flex h-[30vh] bg-gradient-to-r from-rose-950 via-red-600 to-red-50">
                     <Image
                         src={BannerImage}
                         alt="ita-banner"
@@ -19,12 +19,8 @@ const ITABanner = (props: MenuProps) => {
                     />
                 </div>
             </Link>
-
-            <div className="flex  bg-orange-500 text-xl text-white py-4 w-full justify-center break-words ">
-                {props.title}
-            </div>
         </div>
     );
 };
 
-export default ITABanner;
+export default SchoolBanner;

@@ -17,15 +17,15 @@ export default function Navbar() {
                             <Link href="/">หน้าหลัก</Link>
                         </li>
                         <li className="p-2">
-                            <a>คณะผู้บริหาร</a>
+                            <Link href="/board-of-directors">คณะผู้บริหาร</Link>
                         </li>
                         <li>
                             <a>ข้อมูลพื้นฐาน</a>
                             <ul className="p-2 ">
-                                <li><a> ประวัติโรงเรียน</a></li>
-                                <li><a> ตราสัญลักษณ์</a></li>
-                                <li><a> ปรัชญาโรงเรียน</a></li>
-                                <li><a> วิสัยทัศน์และพันธกิจ</a></li>
+                                <li><Link href="/history"> ประวัติโรงเรียน</Link></li>
+                                <li><Link href="/emblem"> ตราสัญลักษณ์</Link></li>
+                                <li><Link href="/philosophy"> ปรัชญาโรงเรียน</Link></li>
+                                <li><Link href="/vision-mission"> วิสัยทัศน์และพันธกิจ</Link></li>
                             </ul>
                         </li>
                         <li className="p-2">
@@ -41,8 +41,8 @@ export default function Navbar() {
                         <Image
                             src={Logo}
                             alt="Footer Logo"
-                            width={60}
-                            height={60}
+                            height={80}
+                            style={{ objectFit: "scale-down" }}
                         />
                         <a className="btn btn-ghost font-bold text-2xl text-white">โรงเรียนบ้านสามแยก</a>
                     </div>
@@ -51,15 +51,15 @@ export default function Navbar() {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-white">
                     <li><Link href="/">หน้าหลัก</Link></li>
-                    <li><a>คณะผู้บริหาร</a></li>
+                    <li><Link href="/board-of-directors">คณะผู้บริหาร</Link></li>
                     <li >
                         <details >
                             <summary>ข้อมูลพื้นฐาน</summary>
                             <ul className="p-2 bg-orange-400 w-40">
-                                <li className="hover:bg-orange-500"><a> ประวัติโรงเรียน</a></li>
-                                <li className="hover:bg-orange-500"><a> ตราสัญลักษณ์</a></li>
-                                <li className="hover:bg-orange-500"><a> ปรัชญาโรงเรียน</a></li>
-                                <li className="hover:bg-orange-500"><a> วิสัยทัศน์และพันธกิจ</a></li>
+                                <li className="hover:bg-orange-500"><Link href="/history"> ประวัติโรงเรียน </Link></li>
+                                <li className="hover:bg-orange-500"><Link href="/emblem"> ตราสัญลักษณ์</Link></li>
+                                <li className="hover:bg-orange-500"><Link href="/philosophy"> ปรัชญาโรงเรียน</Link></li>
+                                <li className="hover:bg-orange-500"><Link href="/vision-mission"> วิสัยทัศน์และพันธกิจ</Link></li>
                             </ul>
                         </details>
                     </li>
