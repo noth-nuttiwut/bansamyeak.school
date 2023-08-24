@@ -1,9 +1,11 @@
 import './globals.css'
+import "react-calendar/dist/Calendar.css";
+import "@/app/MiniCalendar.css";
+
 import type { Metadata } from 'next'
-import SideBar from '@/components/SideBar'
 import SYFooter from '@/components/SYFooter'
-import Navbar from '@/components/NavBar'
-import CarouselBanner from '@/components/CarouselBanner'
+import Navbar from '@/components/NavBar';
+
 
 
 export const metadata: Metadata = {
@@ -19,13 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="corporate">
-      <body className="flex flex-col gap-2">
+      <body>
         <Navbar />
-        <div className="flex justify-center">
-          <CarouselBanner />
-        </div>
-        <div className='flex justify-center flex-wrap'>
-          <SideBar />
+        <div className='flex justify-center items-center'>
           {children}
         </div>
         < SYFooter />

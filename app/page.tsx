@@ -1,38 +1,69 @@
+
+import Image from "next/image"
+
 import VideoCard from "@/components/VideoCard"
 import MenuIcon from "@/components/MenuIcon"
+import SideBar from '@/components/SideBar'
+import SimpleMap from '@/components/SimpleGGMap';
 
+import iconCPE from "@/public/CPE.png"
+import iconESerice from "@/public/e-Service.png"
+import iconEbook from "@/public/ebook-icon.png"
+import iconAMSS from "@/public/AMSS-1.png"
+import iconFacebook from "@/public/facebook.png"
+import iconCamera from "@/public/Camera.png"
+import iconITA from "@/public/ITALogo_2.png"
+import Banner1 from "@/public/Banner-ITA.jpg"
 
-import iconMenu1 from "@/public/ITALogo_2.png"
-import iconMenu2 from "@/public/icon_report.png" 
-import iconMenu3 from "@/public/ebook-icon.png"
-import iconMenu4 from "@/public/AMSS-1.png"
-import iconMenu5 from "@/public/facebook.png" 
-import iconMenu6 from "@/public/Camera.png" 
 
 export default function Home() {
   return (
-    <main>
-      <div className="flex min-h-screen flex-col items-center p-4 gap-6">
-        <VideoCard 
-          videoName="VTR การติดตาม ตรวจสอบ ประเมินผล และนิเทศการศึกษา โรงเรียนบ้านสามแยก"
-          videoUrl="https://www.youtube.com/watch?v=dLy_uAuOiTE" 
+    <div className="flex flex-col gap-2 justify-center">
+      <div className="flex justify-center items-center">
+        <Image src={Banner1}
+          alt="banner-1"
+          objectFit="cover"
         />
-        <VideoCard 
-          videoName="VTR โรงเรียนคุณธรรม สพฐ. ระดับ 2 ดาว โรงเรียนบ้านสามแยก"
-          videoUrl="https://youtu.be/fwuONkQF9JA" 
-        />
+      </div>
+      <div className="flex gap-1 justify-around">
+        <div className="flex min-h-screen">
+          <SideBar />
+        </div>
+        <div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          <MenuIcon iconAlt="ITALogo-1" iconUrl={iconMenu1} goTo={""}/>
-          <MenuIcon iconAlt="icon_report-2" iconUrl={iconMenu2} goTo={""}/>
-          <MenuIcon iconAlt="ebook-3" iconUrl={iconMenu3} goTo={""}/>
-          <MenuIcon iconAlt="AMSS-4" iconUrl={iconMenu4} goTo={""}/>
-          <MenuIcon iconAlt="facebook-5" iconUrl={iconMenu5} goTo={"https://www.facebook.com/bansamyeak"}/>
-          <MenuIcon iconAlt="Camera-6" iconUrl={iconMenu6} goTo={"https://www.facebook.com/bansamyeak/photos"}/>
+
+          <div className="flex min-h-screen flex-col items-center p-4 gap-6">
+            <MenuIcon iconAlt="ITA" iconUrl={iconITA} goTo={"/ITA/home"} menu="TA โรงเรียนบ้านสามแยก จังหวัดชลบุรี" width={600} height={600} />
+
+            <VideoCard
+              videoName="VTR การติดตาม ตรวจสอบ ประเมินผล และนิเทศการศึกษา โรงเรียนบ้านสามแยก"
+              videoUrl="https://www.youtube.com/watch?v=dLy_uAuOiTE"
+            />
+            <VideoCard
+              videoName="VTR โรงเรียนคุณธรรม สพฐ. ระดับ 2 ดาว โรงเรียนบ้านสามแยก"
+              videoUrl="https://youtu.be/fwuONkQF9JA"
+            />
+
+
+            <SimpleMap />
+
+            <div className="w-full">
+              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 justify-center items-end">
+                <MenuIcon iconAlt="facebook-5" iconUrl={iconFacebook} goTo={"https://www.facebook.com/bansamyeak"} menu="FB: bansamyeak" />
+                <MenuIcon iconAlt="Camera-6" iconUrl={iconCamera} goTo={"https://www.facebook.com/bansamyeak/photos"} menu="ภาพกิจกรรม" />
+                <MenuIcon iconAlt="ebook-3" iconUrl={iconEbook} goTo={""} menu="ข่าวสารบ้านสามแยก" />
+
+                <MenuIcon iconAlt="CPE-1" iconUrl={iconCPE} goTo={""} menu="สำนักงานเขตพื้นที่การศึกษาประถมศึกษา ชลบุรี เขต 2" height={400} />
+                <MenuIcon iconAlt="AMSS-1" iconUrl={iconAMSS} goTo={""} menu="รับ-ส่งหนังสือราชการ" />
+                <MenuIcon iconAlt="Eservice" iconUrl={iconESerice} goTo={""} menu="E-Service" />
+
+              </div>
+            </div>
+
+
+          </div>
         </div>
       </div>
-
-
-    </main>
+    </div>
   )
 }

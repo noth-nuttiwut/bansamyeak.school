@@ -10,7 +10,7 @@ export default function CarouselBanner() {
                 <Image src={Banner1} 
                     alt="banner-1"
                     style={{
-                        minHeight: "20vh"
+                        minHeight: "30vh"
                     }}
                 />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -22,7 +22,7 @@ export default function CarouselBanner() {
                 <Image src={Banner2} 
                     alt="banner-2"
                     style={{
-                        minHeight: "20vh"
+                        minHeight: "30vh"
                     }}
                 />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

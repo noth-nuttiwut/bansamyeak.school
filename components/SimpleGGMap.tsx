@@ -7,15 +7,19 @@ export default function SimpleMap() {
             lat: 13.3829901,
             lng: 101.3183004
         },
-        zoom: 18
+        zoom: 16
     };
 
     return (
-        <div style={{ height: '25vh', width: '100%' }}>
+        <div style={{ height: '40vh', width: '90%' }} className='flex flex-col gap-4'>
+            <div className='p-2 bg-orange-400 text-center text-white rounded-sm'>
+                แผนที่ตั้งพิกัดโรงเรียนบ้านสามแยก  อำเภอเกาะจันทร์  จังหวัดชลบุรี
+            </div>
             <GoogleMapReact
-                // bootstrapURLKeys={{ key: "" }}
                 defaultCenter={defaultProps.center}
+                center={defaultProps.center}
                 defaultZoom={defaultProps.zoom}
+                zoom={defaultProps.zoom}
             >
             </GoogleMapReact>
         </div>
