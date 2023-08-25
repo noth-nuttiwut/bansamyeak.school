@@ -7,7 +7,7 @@ const MiniCalendar = () => {
    const [value, onChange] = useState(new Date());
 
   return (
-    <div className="card p-4">
+    <div className="card  sm: w-9/12 md:w-full">
       <Calendar
           defaultValue={value}
           value={value}

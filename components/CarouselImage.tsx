@@ -1,6 +1,12 @@
 
 import Image from "next/image"
-import { GGResponeType } from "@/libs/googleDrive"
+type GGResponeType = {
+    kind: string
+    mimeType: string
+    id: string
+    name: string
+
+}
 
 
 type carouselImageSetType = {
@@ -10,7 +16,7 @@ type carouselImageSetType = {
 export default function CarouselImage(props: carouselImageSetType) {
     return (
         <div>
-            <div className="flex justify-center w-full py-2 gap-2">
+            <div className="flex justify-center w-full p-4 gap-2 mx-6">
                 {
                     props.images.map((image, index) => {
                         return (
@@ -25,14 +31,13 @@ export default function CarouselImage(props: carouselImageSetType) {
                     props.images.map((image, index) => {
                         return (
                             <div id={image.id} className="carousel-item w-full justify-center" key={image.id}>
-
-                                <Image src={`https://drive.google.com/uc?id=${image.id}`}
+                                <Image 
+                                    src={`https://drive.google.com/uc?id=${image.id}`}
                                     alt={"carousel-image-" + image.name}
-                                    quality={100}
-                                    width={800}
-                                    height={600}
-                                    style={{ objectFit: "scale-down" }}
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    width="100"
+                                    height="100"
+                                    sizes="60vw"
+                                    className="w-[60vw] h-auto"
                                 />
                             </div>
                         )

@@ -17,8 +17,8 @@ type SectionProps = {
 const SectionMenu = (props: SectionProps) => {
 
     const menuCss = twMerge(`flex justify-center items-center
-    text-white text-xl text-center font-bold p-8 bg-gradient-to-r 
-     from-violet-700 to-pink-500 w-80 h-40 break-words rounded-r-xl rounded-b-xl`, props?.bgGradient ?? "")
+    text-white text-lg lg:text-xl text-center font-bold p-8 bg-gradient-to-r 
+     from-violet-700 to-pink-500 w-60 h-30 lg:w-80 lg:h-40 break-words rounded-r-xl rounded-b-xl`, props?.bgGradient ?? "")
     
     const codeCss = `flex justify-center items-center
     text-white text-xl text-center font-bold p-6 bg-slate-700 w-6 h-6 rounded-l-xl`

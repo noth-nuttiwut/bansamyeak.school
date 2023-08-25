@@ -1,3 +1,5 @@
+
+
 "use client"
 
 import { twMerge } from "tailwind-merge";
@@ -10,7 +12,7 @@ type MenuProps = {
 }
 
 
-const GGDriveIframe = (props: MenuProps) => {
+const FBiframe = (props: MenuProps) => {
     const [loading, setLoading] = useState(true)
     const iframeStyle = {
         top: 0,
@@ -21,10 +23,10 @@ const GGDriveIframe = (props: MenuProps) => {
         height: "100%"
     }
 
-    const divClass = twMerge(`h-[65vh] sm:w-10/12  md:w-8/12 md:h-[90vw] lg:w-6/12 lg:h-[80vw] xl:w-6/12 xl:h-[70vw] px-10 pb-10`, props.imgCss)
+    const divClass = twMerge(`h-[60vh] sm:w-10/12  md:w-8/12 md:h-[90vw] lg:w-6/12 lg:h-[80vw] xl:w-6/12 xl:h-[70vw] px-10 pb-10`, props.imgCss)
     return (
         <>
-            <div> {props.name} </div>
+            <p> {props.name} </p>
             <div className={divClass} key={props.url}>
                 {
                     loading
@@ -34,17 +36,19 @@ const GGDriveIframe = (props: MenuProps) => {
                         </div>
                         : <></>
                 }
-                <iframe src={props.url}
-                    allow="autoplay"
-                    title={props.name}
-                    className="w-full aspect-video"
-                    style={iframeStyle}
-                    onLoad={() => setLoading(false)}
-                >
+                <iframe 
+                src={props.url}
+                width="0" height="0" 
+                title={props.name}
+                className="w-full justify-center aspect-video"
+                style={iframeStyle}
+                allowFullScreen={true} 
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
                 </iframe>
             </div>
         </>
     );
 };
 
-export default GGDriveIframe;
+export default FBiframe;
+

@@ -1,8 +1,13 @@
 "use client"
 import Image from "next/image"
-import { GGResponeType } from "@/libs/googleDrive"
 
+type GGResponeType = {
+    kind: string
+    mimeType: string
+    id: string
+    name: string
 
+}
 type carouselImageSetType = {
     images: GGResponeType[]
 }
@@ -19,11 +24,10 @@ export default function CarouselSlide(props: carouselImageSetType) {
                             <div key={image.id} id={"GGImage-" + index} className="carousel-item relative w-full justify-center" data-carousel-item>
                                 <Image src={`https://drive.google.com/uc?id=${image.id}`}
                                     alt={"carousel-image-" + image.name}
-                                    quality={100}
-                                    width={800}
-                                    height={600}
-                                    style={{ objectFit: "scale-down" }}
-                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                    width={0}
+                                    height={0}
+                                    sizes="80vw"
+                                    className="w-[60vw] h-auto"
                                 />
 
                                 {

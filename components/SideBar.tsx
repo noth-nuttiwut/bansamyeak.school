@@ -7,7 +7,7 @@ import ChatbotButton from './ChatbotButton';
 
 export default function SideBar() {
     return (
-        <div className="flex flex-col gap-2 items-center p-4 ">
+        <div className="flex flex-col gap-2 items-center px-8 py-4">
             <DirectorCard />
 
             <div className='flex flex-col justify-center items-center'>
@@ -22,7 +22,7 @@ export default function SideBar() {
             </div>
 
 
-            <div className=''>
+            <div className='flex justify-center'>
                 <Calendar />
             </div>
             

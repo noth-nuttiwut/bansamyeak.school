@@ -30,17 +30,17 @@ export default function Home() {
         />
       </div>
 
-      <div className="flex flex-wrap lg:flex-nowrap w-full justify-center">
+      <div className="flex flex-wrap lg:flex-nowrap w-full justify-center px-10">
         <SideBar />
         <div className="flex flex-col items-center p-4 gap-6">
-          <MenuIcon iconAlt="ITA" iconUrl={iconITA} goTo={"/ITA/home"} menu="TA โรงเรียนบ้านสามแยก จังหวัดชลบุรี" imageCss="w-[80vw] lg:w-[40vw]"/>
+          <MenuIcon iconAlt="ITA" iconUrl={iconITA} goTo={"/ITA/home"} menu="TA โรงเรียนบ้านสามแยก จังหวัดชลบุรี" imageCss="w-[80vw] lg:w-[30vw]"/>
           <VideoCard
             videoName="VTR การติดตาม ตรวจสอบ ประเมินผล และนิเทศการศึกษา โรงเรียนบ้านสามแยก"
-            videoUrl="https://www.youtube.com/watch?v=dLy_uAuOiTE"
+            videoUrl="https://www.youtube.com/embed/"
           />
           <VideoCard
             videoName="VTR โรงเรียนคุณธรรม สพฐ. ระดับ 2 ดาว โรงเรียนบ้านสามแยก"
-            videoUrl="https://youtu.be/fwuONkQF9JA"
+            videoUrl="https://www.youtube.com/embed/"
           />
           
           <SimpleMap />
