@@ -10,9 +10,9 @@ export type GGResponeType = {
 }
 
 // authenticates the service account to be used in this context
-const auth = new google.auth.GoogleAuth({
+const authFD = new google.auth.GoogleAuth({
     // your credentials to authenticate
-    keyFile: process.env.CREDENTIAL_PATH,
+    keyFile: "./public/ggCredential/credentialsFD.json",
     // the actions you are permissed to perform using this API, in this case
     // all CRUD operations are permissed, check out
     // [ https://developers.google.com/drive/api/guides/api-specific-auth ]
@@ -20,12 +20,24 @@ const auth = new google.auth.GoogleAuth({
     scopes: ["https://www.googleapis.com/auth/drive"],
 })
 
-const drive = google.drive({
-    version: "v3",
-    auth: auth,
+// authenticates the service account to be used in this context
+const authFL = new google.auth.GoogleAuth({
+    // your credentials to authenticate
+    keyFile: "./public/ggCredential/credentials.json",
+    // the actions you are permissed to perform using this API, in this case
+    // all CRUD operations are permissed, check out
+    // [ https://developers.google.com/drive/api/guides/api-specific-auth ]
+    // for more advice on scopes
+    scopes: ["https://www.googleapis.com/auth/drive"],
 })
 
+
+
 export const getFolders = async () => {
+    const drive = google.drive({
+        version: "v3",
+        auth: authFD,
+    })
     try {
         const res = await drive.files.list({
             q: 'mimeType=\'application/vnd.google-apps.folder\'',
@@ -39,6 +51,10 @@ export const getFolders = async () => {
 }
 
 export const getFiles = async (folderId: string) => {
+    const drive = google.drive({
+        version: "v3",
+        auth: authFL,
+    })
     try {
         const res = await drive.files.list({
             q: `'${folderId}' in parents and trashed = false`,
