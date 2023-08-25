@@ -1,6 +1,5 @@
 import GGDriveIframe from "@/components/ITA/GGDriveIframe"
 import ITABanner from "@/components/ITA/ITABanner"
-
 import { getUrlsFrom } from "@/libs/googleDrive"
 
 export default async function O6Page () {

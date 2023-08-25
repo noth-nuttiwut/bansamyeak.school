@@ -12,7 +12,7 @@ export type GGResponeType = {
 // authenticates the service account to be used in this context
 const auth = new google.auth.GoogleAuth({
     // your credentials to authenticate
-    keyFile: "./credentials.json",
+    keyFile: "./public/credentials.json",
     // the actions you are permissed to perform using this API, in this case
     // all CRUD operations are permissed, check out
     // [ https://developers.google.com/drive/api/guides/api-specific-auth ]

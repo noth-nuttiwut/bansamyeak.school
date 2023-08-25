@@ -1,4 +1,3 @@
-"use client"
 import ITABanner from "@/components/ITA/ITABanner"
 import SectionMenu from "@/components/ITA/SectionMenu"
 export default function Home() {
