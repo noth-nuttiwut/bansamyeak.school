@@ -20,13 +20,12 @@ const auth = new google.auth.GoogleAuth({
     scopes: ["https://www.googleapis.com/auth/drive"],
 })
 
-export const getFolders = async () => {
-    // allows you to use drive API methods e.g. listing files, creating files.
-    const drive = google.drive({
-        version: "v3",
-        auth: auth,
-    })
+const drive = google.drive({
+    version: "v3",
+    auth: auth,
+})
 
+export const getFolders = async () => {
     try {
         const res = await drive.files.list({
             q: 'mimeType=\'application/vnd.google-apps.folder\'',
@@ -40,12 +39,6 @@ export const getFolders = async () => {
 }
 
 export const getFiles = async (folderId: string) => {
-    // allows you to use drive API methods e.g. listing files, creating files.
-    const drive = google.drive({
-        version: "v3",
-        auth: auth,
-    })
-
     try {
         const res = await drive.files.list({
             q: `'${folderId}' in parents and trashed = false`,
@@ -57,7 +50,6 @@ export const getFiles = async (folderId: string) => {
         return null
     }
 }
-
 
 export const getUrlsFrom = async (folderName : string) => {
     const ggUrl = `${process.env.DOMAIN_NAME}/api/google-drive`
