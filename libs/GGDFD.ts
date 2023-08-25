@@ -1,4 +1,3 @@
-'use server'
 import { google } from "googleapis"
 
 // authenticates the service account to be used in this context

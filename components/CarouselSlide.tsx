@@ -27,7 +27,7 @@ export default function CarouselSlide(props: carouselImageSetType) {
                                     width={0}
                                     height={0}
                                     sizes="80vw"
-                                    className="w-[60vw] h-auto"
+                                    className="w-[100vw] h-auto md:w-[50vw]"
                                 />
 
                                 {

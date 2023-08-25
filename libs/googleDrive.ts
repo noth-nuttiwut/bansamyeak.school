@@ -1,6 +1,3 @@
-"use server"
-
-
 type GGResponeType = {
     kind: string
     mimeType: string
@@ -8,8 +5,6 @@ type GGResponeType = {
     name: string
 
 }
-
-
 
 export const getUrlsFrom = async (folderName: string) => {
     const ggUrl = `${process.env.DOMAIN_NAME}/api/google-drive`

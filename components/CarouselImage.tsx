@@ -37,7 +37,7 @@ export default function CarouselImage(props: carouselImageSetType) {
                                     width="100"
                                     height="100"
                                     sizes="60vw"
-                                    className="w-[60vw] h-auto"
+                                    className="w-[80vw] h-full md:w-[40vw] lg:w-[60vw]"
                                 />
                             </div>
                         )
