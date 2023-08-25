@@ -11,7 +11,10 @@ type GGResponeType = {
 // authenticates the service account to be used in this context
 export const auth = new google.auth.GoogleAuth({
     // your credentials to authenticate
-    keyFile: "./public/ggCredential/credentialsFD.json",
+    credentials: {
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+        private_key: process.env.GOOGLE_PRIVATE_KEY
+    },
     // the actions you are permissed to perform using this API, in this case
     // all CRUD operations are permissed, check out
     // [ https://developers.google.com/drive/api/guides/api-specific-auth ]
@@ -24,13 +27,13 @@ export const drive = google.drive({
     auth: auth,
 })
 
-export const getUrlsFrom = async (folderName : string) => {
+export const getUrlsFrom = async (folderName: string) => {
     const ggUrl = `${process.env.DOMAIN_NAME}/api/google-drive`
-    const FolderResp = await fetch(ggUrl+"/folders")
+    const FolderResp = await fetch(ggUrl + "/folders")
     const allFilesandFolders: GGResponeType[] = await FolderResp.json()
     const folderID: GGResponeType[] = allFilesandFolders.filter(f => f.name == folderName)
 
-    const filesResp = await fetch(ggUrl+"/files/"+folderID[0]?.id)
+    const filesResp = await fetch(ggUrl + "/files/" + folderID[0]?.id)
     const Urls: GGResponeType[] = await filesResp.json()
     const ImageUrls: GGResponeType[] = Urls?.filter(i => i?.mimeType?.startsWith("image/"))
     const PdfUrls: GGResponeType[] = Urls?.filter(i => i?.mimeType?.startsWith("application/"))
