@@ -1,4 +1,4 @@
-
+'use server'
 export type GGResponeType = {
     kind: string
     mimeType: string
@@ -13,7 +13,7 @@ export const getUrlsFrom = async (folderName : string) => {
     const allFilesandFolders: GGResponeType[] = await FolderResp.json()
     const folderID: GGResponeType[] = allFilesandFolders.filter(f => f.name == folderName)
 
-    const filesResp = await fetch(ggUrl+"/files?FID="+folderID[0]?.id)
+    const filesResp = await fetch(ggUrl+"/files/"+folderID[0]?.id)
     const Urls: GGResponeType[] = await filesResp.json()
     const ImageUrls: GGResponeType[] = Urls?.filter(i => i.mimeType.startsWith("image/"))
     const PdfUrls: GGResponeType[] = Urls?.filter(i => i.mimeType.startsWith("application/"))

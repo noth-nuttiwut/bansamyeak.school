@@ -3,7 +3,7 @@ import ITABanner from "@/components/ITA/ITABanner"
 import { getUrlsFrom } from "@/libs/googleDrive"
 import O1Banner from "@/public/ITABanner/B-O28.jpg"
 
-export default async function O1Page() {
+export default async function O28Page() {
   const {
     PdfUrls,
     ImageUrls
