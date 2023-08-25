@@ -30,7 +30,6 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "daisyui": "^3.5.1",
-    "google-map-react": "^2.2.1"
+    "daisyui": "^3.5.1"
   }
 }

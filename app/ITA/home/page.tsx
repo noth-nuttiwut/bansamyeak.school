@@ -252,7 +252,6 @@ export default function Home() {
     <div className="flex flex-col items-center min-h-fit gap-4 bg-gradient-to-b from-orange-100 to-orange-50">
       <ITABanner title="แบบตรวจการเปิดเผยข้อมูลสาธารณะ (Open Data Integrity and Transparency Assessment: OIT)" />
 
-
       {/* section 1 : ข้อมูลพื้นฐาน */}
       <SectionMenu items={sectionItems.section1} sectionName="ข้อมูลพื้นฐาน" bgGradient="bg-gradient-to-r from-rose-700 to-orange-500" />
 

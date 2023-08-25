@@ -12,8 +12,11 @@ export default function DirectorCard() {
                 <figure className="px-10">
                     <Image
                         src={DirectorP}
-                        alt="Director profile"
-                        width={"240"}
+                        alt="DirectorP"
+                        width="0"
+                        height="0"
+                        sizes="20vw"
+                        className="sm:w-full lg:w-[15vw] xl:w-[10vw] h-auto"
                     />
                 </figure>
                 <div className="bg-orange-500 p-4">

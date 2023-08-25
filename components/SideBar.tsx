@@ -13,11 +13,11 @@ export default function SideBar() {
             <div className='flex flex-col justify-center items-center'>
                 <div className='bg-orange-500 text-white text-2xl text-center px-10 py-4' > รายการหลัก</div>
                 <ul className="menu w-80 rounded-box text-slate-200 visited:text-orange-400">
-                    <MenuButton imgUrl='' iconUrl='' menu='ข้อมูลพื้นฐาน' goTo="/infomation" />
-                    <MenuButton imgUrl='' iconUrl='' menu='บุคคลากร' goTo="/members" />
-                    <MenuButton imgUrl='' iconUrl='' menu='กลุ่มบริหารงานบุคคลการเงินและสินทรัพย์' goTo="/hr-finance" />
-                    <MenuButton imgUrl='' iconUrl='' menu='กลุ่มบริหารงานกิจการ' goTo="/activity" />
-                    <MenuButton imgUrl='' iconUrl='' menu='กลุ่มบริหารงานทั่วไป' goTo="/general" />
+                    <MenuButton imgUrl='' iconUrl='' menu='ข้อมูลพื้นฐาน' goTo="/" />
+                    <MenuButton imgUrl='' iconUrl='' menu='บุคคลากร' goTo="/board-of-directors" />
+                    <MenuButton imgUrl='' iconUrl='' menu='กลุ่มบริหารงานบุคคลการเงินและสินทรัพย์' goTo="/" />
+                    <MenuButton imgUrl='' iconUrl='' menu='กลุ่มบริหารงานกิจการ' goTo="/" />
+                    <MenuButton imgUrl='' iconUrl='' menu='กลุ่มบริหารงานทั่วไป' goTo="/" />
                 </ul>
             </div>
 

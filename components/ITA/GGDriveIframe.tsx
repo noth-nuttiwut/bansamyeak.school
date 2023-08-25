@@ -6,8 +6,7 @@ import { useState } from "react"
 type MenuProps = {
     url: string
     name: string
-    wCss?: string | ""
-    hCss?: string | ""
+    imgCss?: string | ""
 }
 
 
@@ -22,7 +21,7 @@ const GGDriveIframe = (props: MenuProps) => {
         height: "100%"
     }
 
-    const divClass = twMerge(`w-6/12 h-screen`, props.wCss, props.hCss)
+    const divClass = twMerge(`h-[60vh] sm:w-10/12  md:w-8/12 md:h-[90vw] lg:w-6/12 lg:h-[80vw] xl:w-6/12 xl:h-[70vw] px-10 pb-10`, props.imgCss)
     return (
         <>
             <p> {props.name} </p>
@@ -38,7 +37,7 @@ const GGDriveIframe = (props: MenuProps) => {
                 <iframe src={props.url}
                     allow="autoplay"
                     title={props.name}
-                    className="w-full aspect-auto"
+                    className="w-full justify-center aspect-video"
                     style={iframeStyle}
                     onLoad={() => setLoading(false)}
                 >

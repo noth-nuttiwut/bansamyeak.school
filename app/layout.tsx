@@ -22,14 +22,18 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="corporate">
       <Head>
-        <link rel='icon' href='/favicon.ico'/>
+        <link rel='icon' href='/favicon.ico' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <body>
-        <Navbar />
-        <div className='flex justify-center items-center'>
-          {children}
+        <div className='flex flex-col'>
+          <Navbar />
+          {
+            children
+          }
+          < SYFooter />
         </div>
-        < SYFooter />
+
       </body>
     </html>
   )

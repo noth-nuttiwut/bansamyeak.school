@@ -60,7 +60,6 @@ export const getFiles = async (folderId: string) => {
 
 
 export const getUrlsFrom = async (folderName : string) => {
-
     const ggUrl = `${process.env.DOMAIN_NAME}/api/google-drive`
     const FolderResp = await fetch(ggUrl+"/folders")
     const allFilesandFolders: GGResponeType[] = await FolderResp.json()
@@ -68,7 +67,12 @@ export const getUrlsFrom = async (folderName : string) => {
 
     const filesResp = await fetch(ggUrl+"/files?FID=" + folderID[0]?.id)
     const Urls: GGResponeType[] = await filesResp.json()
-    return Urls
+    const ImageUrls: GGResponeType[] = Urls?.filter(i => i.mimeType.startsWith("image/"))
+    const PdfUrls: GGResponeType[] = Urls?.filter(i => i.mimeType.startsWith("application/"))
+    return {
+        PdfUrls,
+        ImageUrls
+    }
 }
 
 

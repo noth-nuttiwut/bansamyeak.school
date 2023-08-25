@@ -18,48 +18,47 @@ import Banner1 from "@/public/Banner-ITA.jpg"
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-2 justify-center bg-gradient-to-t from-orange-100 to-slate-100">
-      <div className="flex justify-center items-center">
-        <Image src={Banner1}
-          alt="banner-1"
-          objectFit="cover"
+    <div className="flex flex-col gap-2 w-full justify-center bg-gradient-to-t from-orange-100 to-slate-100">
+      <div className={"flex w-full justify-center items-center px-2"}>
+        <Image
+          src={Banner1}
+          alt="Banner1"
+          width="0"
+          height="0"
+          sizes="100vw"
+          className="sm:w-full sm:h-auto lg:w-auto lg:h-[350px]"
         />
       </div>
-      <div className="flex justify-center">
-        <div className="flex w-2/12">
-          <SideBar />
-        </div>
-        <div >
-          <div className="flex flex-col items-center p-4 gap-6">
-            <MenuIcon iconAlt="ITA" iconUrl={iconITA} goTo={"/ITA/home"} menu="TA โรงเรียนบ้านสามแยก จังหวัดชลบุรี" width={600} height={600} />
 
-            <VideoCard
-              videoName="VTR การติดตาม ตรวจสอบ ประเมินผล และนิเทศการศึกษา โรงเรียนบ้านสามแยก"
-              videoUrl="https://www.youtube.com/watch?v=dLy_uAuOiTE"
-            />
-            <VideoCard
-              videoName="VTR โรงเรียนคุณธรรม สพฐ. ระดับ 2 ดาว โรงเรียนบ้านสามแยก"
-              videoUrl="https://youtu.be/fwuONkQF9JA"
-            />
+      <div className="flex flex-wrap lg:flex-nowrap w-full justify-center">
+        <SideBar />
+        <div className="flex flex-col items-center p-4 gap-6">
+          <MenuIcon iconAlt="ITA" iconUrl={iconITA} goTo={"/ITA/home"} menu="TA โรงเรียนบ้านสามแยก จังหวัดชลบุรี" imageCss="w-[80vw] lg:w-[40vw]"/>
+          <VideoCard
+            videoName="VTR การติดตาม ตรวจสอบ ประเมินผล และนิเทศการศึกษา โรงเรียนบ้านสามแยก"
+            videoUrl="https://www.youtube.com/watch?v=dLy_uAuOiTE"
+          />
+          <VideoCard
+            videoName="VTR โรงเรียนคุณธรรม สพฐ. ระดับ 2 ดาว โรงเรียนบ้านสามแยก"
+            videoUrl="https://youtu.be/fwuONkQF9JA"
+          />
+          
+          <SimpleMap />
 
+          <div className="flex p-4">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 justify-center items-end">
+              <MenuIcon iconAlt="facebook-5" iconUrl={iconFacebook} goTo={"https://www.facebook.com/bansamyeak"} menu="FB: bansamyeak" imageCss="w-[20vw] xl:w-[100px]" />
+              <MenuIcon iconAlt="Camera-6" iconUrl={iconCamera} goTo={"https://www.facebook.com/bansamyeak/photos"} menu="ภาพกิจกรรม" imageCss="w-[20vw] xl:w-[100px]" />
+              <MenuIcon iconAlt="ebook-3" iconUrl={iconEbook} goTo={""} menu="ข่าวสารบ้านสามแยก" imageCss="w-[20vw] xl:w-[100px]" />
 
-            <SimpleMap />
+              <MenuIcon iconAlt="CPE-1" iconUrl={iconCPE} goTo={""} menu="สำนักงานเขตพื้นที่การศึกษาประถมศึกษา ชลบุรี เขต 2" imageCss="w-[20vw] xl:w-[100px]" />
+              <MenuIcon iconAlt="AMSS-1" iconUrl={iconAMSS} goTo={""} menu="รับ-ส่งหนังสือราชการ" imageCss="w-[20vw] xl:w-[100px]" />
+              <MenuIcon iconAlt="Eservice" iconUrl={iconESerice} goTo={""} menu="E-Service" imageCss="w-[20vw] xl:w-[100px]" />
 
-            <div className="w-full py-4">
-              <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 justify-center items-end">
-                <MenuIcon iconAlt="facebook-5" iconUrl={iconFacebook} goTo={"https://www.facebook.com/bansamyeak"} menu="FB: bansamyeak" />
-                <MenuIcon iconAlt="Camera-6" iconUrl={iconCamera} goTo={"https://www.facebook.com/bansamyeak/photos"} menu="ภาพกิจกรรม" />
-                <MenuIcon iconAlt="ebook-3" iconUrl={iconEbook} goTo={""} menu="ข่าวสารบ้านสามแยก" />
-
-                <MenuIcon iconAlt="CPE-1" iconUrl={iconCPE} goTo={""} menu="สำนักงานเขตพื้นที่การศึกษาประถมศึกษา ชลบุรี เขต 2" height={400} />
-                <MenuIcon iconAlt="AMSS-1" iconUrl={iconAMSS} goTo={""} menu="รับ-ส่งหนังสือราชการ" />
-                <MenuIcon iconAlt="Eservice" iconUrl={iconESerice} goTo={""} menu="E-Service" />
-
-              </div>
             </div>
-
-
           </div>
+
+
         </div>
       </div>
     </div>

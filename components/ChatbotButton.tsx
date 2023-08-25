@@ -50,13 +50,13 @@ export default function ChatbotButton() {
         },
         {
             id: '4',
-            component: customMessage("ไปที่ url นี้", "https://docs.google.com/forms/d/e/1FAIpQLScK8lEpJIA1eps9Qt-p9cEdvxsYerkS5nQcBa6_wGnDSLW9Ig/viewform?fbclid=IwAR1-8MsvyM-Jqi3bzxoLdz7qn21U60dR4r3t5OewaIPpMA0JjgTErv24W7o"),
+            component: customMessage("ไปที่ url นี้", "https://docs.google.com/forms/d/e/1FAIpQLScK8lEpJIA1eps9Qt-p9cEdvxsYerkS5nQcBa6_wGnDSLW9Ig/viewform"),
             trigger: "2",
         },
         {
             id: '5',
             component: (
-                customMessage("ไปที่ url นี้", "https://docs.google.com/forms/d/e/1FAIpQLSd6PrtNT2ZN4GmG92yjgtUmKpNqIhWnS66JNRpelyCID_7AKA/viewform?fbclid=IwAR18B7nwkts3HLOAPHcdbgG_6B3_DUSeBAnkr2oceWaUeY1DKuCKv_iji2s")
+                customMessage("ไปที่ url นี้", "https://docs.google.com/forms/d/e/1FAIpQLSd6PrtNT2ZN4GmG92yjgtUmKpNqIhWnS66JNRpelyCID_7AKA/viewform")
             ),
             trigger: "2",
         },

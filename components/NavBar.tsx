@@ -1,4 +1,3 @@
-
 import Image from "next/image"
 import Link from "next/link"
 import Logo from "@/public/logo.png"
@@ -6,7 +5,7 @@ import Logo from "@/public/logo.png"
 export default function Navbar() {
     return (
 
-        <div className="navbar bg-orange-500 sticky top-0 z-[5000]">
+        <div className="navbar bg-orange-500 sticky top-0 z-[5000] w-full">
             <div className="navbar-start">
                 <div className="dropdown bg-orange-500">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -36,23 +35,27 @@ export default function Navbar() {
                         </li>
                     </ul>
                 </div>
-                <Link href="/">
-                    <div className='flex justify-center items-center'>
-                        <Image
-                            src={Logo}
-                            alt="Footer Logo"
-                            height={80}
-                            style={{ objectFit: "scale-down" }}
-                        />
-                        <a className="btn btn-ghost font-bold text-2xl text-white">โรงเรียนบ้านสามแยก</a>
-                    </div>
+
+
+                <Link href="/" className="btn btn-ghost font-bold sm:text-xl md:text-2xl text-white">
+                    <Image
+                        src={Logo}
+                        alt="School Logo"
+                        width="0"
+                        height="0"
+                        sizes="100vw"
+                        className="w-[10vw] h-auto lg:w-[30px]"
+                    />
+                    โรงเรียนบ้านสามแยก
+
                 </Link>
+
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-white">
                     <li><Link href="/">หน้าหลัก</Link></li>
                     <li><Link href="/board-of-directors">คณะผู้บริหาร</Link></li>
-                    <li >
+                    <li tabIndex={0}>
                         <details >
                             <summary>ข้อมูลพื้นฐาน</summary>
                             <ul className="p-2 bg-orange-400 w-40">
@@ -68,7 +71,7 @@ export default function Navbar() {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn rounded-full bg-orange-500 border-orange-500 text-white hover:bg-orange-400 hover:border-orange-400 hover:text-slate-800"> ?</a>
+                <a className="btn rounded-full bg-orange-500 border-orange-500 text-white hover:bg-orange-400 hover:border-orange-400 hover:text-slate-800"></a>
             </div>
         </div>
 
