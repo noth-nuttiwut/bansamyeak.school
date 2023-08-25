@@ -34,12 +34,12 @@ const authFL = new google.auth.GoogleAuth({
 
 
 export const getFolders = async () => {
-    const drive = google.drive({
+    const driveFD = google.drive({
         version: "v3",
         auth: authFD,
     })
     try {
-        const res = await drive.files.list({
+        const res = await driveFD.files.list({
             q: 'mimeType=\'application/vnd.google-apps.folder\'',
         })
         const files = res.data.files
@@ -51,12 +51,12 @@ export const getFolders = async () => {
 }
 
 export const getFiles = async (folderId: string) => {
-    const drive = google.drive({
+    const driveFL = google.drive({
         version: "v3",
         auth: authFL,
     })
     try {
-        const res = await drive.files.list({
+        const res = await driveFL.files.list({
             q: `'${folderId}' in parents and trashed = false`,
         })
         const files = res.data.files
@@ -73,7 +73,7 @@ export const getUrlsFrom = async (folderName : string) => {
     const allFilesandFolders: GGResponeType[] = await FolderResp.json()
     const folderID: GGResponeType[] = allFilesandFolders.filter(f => f.name == folderName)
 
-    const filesResp = await fetch(ggUrl+"/files?FID=" + folderID[0]?.id)
+    const filesResp = await fetch(ggUrl+"/files?FID="+folderID[0]?.id)
     const Urls: GGResponeType[] = await filesResp.json()
     const ImageUrls: GGResponeType[] = Urls?.filter(i => i.mimeType.startsWith("image/"))
     const PdfUrls: GGResponeType[] = Urls?.filter(i => i.mimeType.startsWith("application/"))

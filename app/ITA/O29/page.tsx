@@ -1,7 +1,7 @@
 import GGDriveIframe from "@/components/ITA/GGDriveIframe"
 import ITABanner from "@/components/ITA/ITABanner"
 import { getUrlsFrom } from "@/libs/googleDrive"
-import O1Banner from "@/public/ITABanner/B-O1.jpg"
+import O1Banner from "@/public/ITABanner/B-O29.jpg"
 
 export default async function O1Page() {
   const {
