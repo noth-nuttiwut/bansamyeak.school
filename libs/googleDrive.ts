@@ -1,4 +1,4 @@
-type GGResponeType = {
+export type GGResponeType = {
     kind: string
     mimeType: string
     id: string

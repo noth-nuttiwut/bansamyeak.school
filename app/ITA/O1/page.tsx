@@ -1,15 +1,14 @@
-
+import O1Banner from "@/public/ITABanner/B-O1.jpg"
 import GGDriveIframe from "@/components/ITA/GGDriveIframe"
 import ITABanner from "@/components/ITA/ITABanner"
-import { getUrlsFrom } from "@/libs/googleDrive"
-import O1Banner from "@/public/ITABanner/B-O1.jpg"
+import { getUrlsFrom, GGResponeType } from "@/libs/googleDrive"
+
 
 export default async function O1Page() {
   const {
     PdfUrls,
     ImageUrls
   } = await getUrlsFrom("O1 โครงสร้าง")
-
   console.log("getUrlsFrom ::: ", PdfUrls, ImageUrls)
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-red-200 to-red-100">
@@ -25,4 +24,5 @@ export default async function O1Page() {
     </div>
   )
 }
+
 
