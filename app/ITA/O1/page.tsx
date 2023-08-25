@@ -2,7 +2,7 @@ import O1Banner from "@/public/ITABanner/B-O1.jpg"
 import GGDriveIframe from "@/components/ITA/GGDriveIframe"
 import ITABanner from "@/components/ITA/ITABanner"
 import { getUrlsFrom, GGResponeType } from "@/libs/googleDrive"
-
+// DOMAIN_NAME
 
 export default async function O1Page() {
   const {
