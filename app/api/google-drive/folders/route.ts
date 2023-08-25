@@ -1,6 +1,6 @@
 
 
-import { getFolders } from "@/libs/googleDrive"
+import { getFolders } from "@/libs/GGDFD"
 import { NextResponse } from "next/server"
 
 export async function GET(){

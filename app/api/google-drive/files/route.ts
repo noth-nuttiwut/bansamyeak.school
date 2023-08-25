@@ -1,6 +1,6 @@
 
 
-import { getFiles } from "@/libs/googleDrive"
+import { getFiles } from "@/libs/GGDFL"
 import { NextResponse, NextRequest } from "next/server"
 
 export async function GET(req : NextRequest){
