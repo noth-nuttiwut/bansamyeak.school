@@ -1,3 +1,4 @@
+"use server"
 import { google } from "googleapis"
 
 type GGResponeType = {
@@ -9,7 +10,7 @@ type GGResponeType = {
 }
 
 // authenticates the service account to be used in this context
-export const auth = new google.auth.GoogleAuth({
+const auth = new google.auth.GoogleAuth({
     // your credentials to authenticate
     credentials: {
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
@@ -22,7 +23,7 @@ export const auth = new google.auth.GoogleAuth({
     scopes: ["https://www.googleapis.com/auth/drive"],
 })
 
-export const drive = google.drive({
+const drive = google.drive({
     version: "v3",
     auth: auth,
 })
