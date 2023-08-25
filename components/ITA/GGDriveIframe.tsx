@@ -1,15 +1,18 @@
 "use client"
 
-import { Suspense } from "react";
+import { twMerge } from "tailwind-merge";
+import { useState } from "react"
 
 type MenuProps = {
     url: string
     name: string
+    wCss?: string | ""
+    hCss?: string | ""
 }
 
 
 const GGDriveIframe = (props: MenuProps) => {
-
+    const [loading, setLoading] = useState(true)
     const iframeStyle = {
         top: 0,
         left: 0,
@@ -19,19 +22,29 @@ const GGDriveIframe = (props: MenuProps) => {
         height: "100%"
     }
 
-
+    const divClass = twMerge(`w-6/12 h-screen`, props.wCss, props.hCss)
     return (
-        <div className="w-8/12 h-screen">
-            <Suspense fallback={<p>กำลังโหลดข้อมูล ....</p>}>
+        <>
+            <p> {props.name} </p>
+            <div className={divClass} key={props.url}>
+                {
+                    loading
+                        ?
+                        <div className="flex justify-center items-center">
+                            <span className="loading loading-bars loading-lg"></span>
+                        </div>
+                        : <></>
+                }
                 <iframe src={props.url}
                     allow="autoplay"
                     title={props.name}
-                    className="w-full aspect-video"
+                    className="w-full aspect-auto"
                     style={iframeStyle}
+                    onLoad={() => setLoading(false)}
                 >
                 </iframe>
-            </Suspense>
-        </div>
+            </div>
+        </>
     );
 };
 

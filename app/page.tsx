@@ -45,7 +45,7 @@ export default function Home() {
 
             <SimpleMap />
 
-            <div className="w-full">
+            <div className="w-full py-4">
               <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 justify-center items-end">
                 <MenuIcon iconAlt="facebook-5" iconUrl={iconFacebook} goTo={"https://www.facebook.com/bansamyeak"} menu="FB: bansamyeak" />
                 <MenuIcon iconAlt="Camera-6" iconUrl={iconCamera} goTo={"https://www.facebook.com/bansamyeak/photos"} menu="ภาพกิจกรรม" />

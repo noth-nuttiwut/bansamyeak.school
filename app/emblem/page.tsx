@@ -10,7 +10,7 @@ export default function History() {
         <ITABanner title="" />
 
         <div className="p-8 bg-pink-600 text-white font-bold rounded-md text-2xl">
-          ปรัชญา โรงเรียนบ้านสามแยก
+        ตราสัญลักษณ์
         </div>
 
         <div className="flex justify-center min-h-screen">

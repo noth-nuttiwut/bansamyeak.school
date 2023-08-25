@@ -9,8 +9,9 @@ type VideoProps = {
 export default function VideoCard(props: VideoProps) {
     return (
         <div className="card shadow-xl">
-            <div className="flex flex-col justify-center items-center p-4 gap-2">
-                <div className="bg-orange-500 text-xl text-white py-4 px-2"> {props.videoName}</div>
+            <div className="bg-orange-500 text-xl text-white p-4 rounded-sm"> {props.videoName}</div>
+            <div className="flex flex-col justify-center items-center py-4">
+                
                 <ReactPlayer url={props.videoUrl} controls={true}/>
             </div>
             

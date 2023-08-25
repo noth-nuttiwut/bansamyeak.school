@@ -29,7 +29,7 @@ const SectionMenu = (props: SectionProps) => {
                 {
                     props.items.map(item => {
                         return (
-                            <Link href={item.goto} key={item.code} >
+                            <Link href={item.goto} key={item.title} >
                                 <div className="flex ">
                                     <div className={codeCss}>
                                         {item.code}

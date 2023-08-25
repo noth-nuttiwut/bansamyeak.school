@@ -18,7 +18,7 @@ export default function DirectorCard() {
                 </figure>
                 <div className="bg-orange-500 p-4">
                     <p>นางสาวสวิตตา  ประเสริฐสาร</p>
-                    <p className="text-gray-600">ผู้อำนวยการโรงเรียนบ้านสามแยก</p>
+                    <p className="text-gray-700">ผู้อำนวยการโรงเรียนบ้านสามแยก</p>
                 </div>
             </div>
 
