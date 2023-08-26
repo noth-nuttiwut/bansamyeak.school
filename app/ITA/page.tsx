@@ -280,7 +280,7 @@ export default function Home() {
       <SectionMenu key={"section-9"} items={sectionItems.section9} sectionName="การส่งเสริมความโปร่งใส" bgGradient="bg-gradient-to-r from-sky-800 to-teal-500" />
 
       {/* section 10 : การเปิดโอกาสให้เกิดการมีส่วนร่วม */}
-      <SectionMenu key={"section-10"} items={sectionItems.section10} sectionName="การเปิดโอกาสให้เกิดการมีส่วนร่วม" bgGradient="bg-gradient-to-r from-amber-600 to-yellow-500" />
+      <SectionMenu key={"section-10"} items={sectionItems.section10} sectionName="การเปิดโอกาสให้เกิดการมีส่วนร่วม" bgGradient="bg-gradient-to-r from-sky-800 to-teal-500" />
 
       {/* section 11 : การดำเนินการเพื่อป้องกันการทุจริต */}
       <SectionMenu key={"section-11"} items={sectionItems.section11} sectionName="การดำเนินการเพื่อป้องกันการทุจริต" bgGradient="bg-gradient-to-r from-amber-600 to-yellow-500" />

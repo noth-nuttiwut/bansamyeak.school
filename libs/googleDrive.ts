@@ -1,5 +1,5 @@
 import { getFiles } from "./GGDFL"
-import { getFolders } from "./GGDFD"
+import { getFolders, getFoldersInFolders } from "./GGDFD"
 export type GGResponeType = {
     kind: string
     mimeType: string
@@ -11,6 +11,7 @@ export type urlFromType =  {
     PdfUrls : GGResponeType[] | undefined,
     ImageUrls : GGResponeType[] | undefined
 }
+
 
 export const getUrlsFrom = async (folderName: string) => {
     // const ggUrl = `${process.env.DOMAIN_NAME}/api/google-drive`
@@ -41,8 +42,16 @@ export const getUrlsFrom = async (folderName: string) => {
         PdfUrls : [],
         ImageUrls: []
     }
-
-
-
-
 }
+
+export const getFolderByName = async (folderName: string) => {
+    const allFilesandFolders: any = await getFolders()
+    if (allFilesandFolders) {
+        const folderID: GGResponeType[] = allFilesandFolders?.filter((f: GGResponeType) => f.name == folderName)
+        const allFolders = await getFoldersInFolders(folderID[0]?.id)
+        return allFolders
+    }
+    return []
+    
+}
+

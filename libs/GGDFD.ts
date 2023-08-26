@@ -33,3 +33,17 @@ export const getFolders = async () => {
     }
 }
 
+export const getFoldersInFolders = async (folderId : string) => {
+    
+    try {
+        const res = await drive.files.list({
+            q: `'${folderId}' in parents and mimeType=\'application/vnd.google-apps.folder\'`,
+        })
+        const files = res.data.files
+        return files
+    } catch (error: any) {
+        console.error("Error fetching files:", error.message)
+        return []
+    }
+}
+
