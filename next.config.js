@@ -5,7 +5,7 @@ const nextConfig = {
     },
     reactStrictMode: true,
     images: {
-        domains: ['drive.google.com', "*.googleusercontent.com"]
+        domains: ['drive.google.com', "*.googleusercontent.com", "bansamyeak-school.vercel.app"]
     }
      
 }
