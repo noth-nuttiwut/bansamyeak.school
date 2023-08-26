@@ -3,6 +3,7 @@ import GGDriveIframe from "@/components/ITA/GGDriveIframe"
 import ITABanner from "@/components/ITA/ITABanner"
 import { getUrlsFrom, GGResponeType } from "@/libs/googleDrive"
 
+
 export default async function O1Page() {
   const {
     PdfUrls,
@@ -13,7 +14,7 @@ export default async function O1Page() {
       <ITABanner title="" customBanner={O1Banner} bgGradient="bg-gradient-to-r from-red-900 via-red-600 to-red-50"/>
 
       {
-        PdfUrls ? PdfUrls.map((pdfUrl) => {
+        PdfUrls ? PdfUrls.map((pdfUrl : GGResponeType) => {
           return <GGDriveIframe url={`https://drive.google.com/file/d/${pdfUrl.id}/preview`} name={pdfUrl.name} key={pdfUrl.id} />
         })
         : <></>

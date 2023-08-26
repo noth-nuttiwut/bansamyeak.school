@@ -37,6 +37,6 @@ export const getFiles = async (folderId: string) => {
         return files
     } catch (error: any) {
         console.error("Error fetching files:", error.message)
-        return null
+        return []
     }
 }

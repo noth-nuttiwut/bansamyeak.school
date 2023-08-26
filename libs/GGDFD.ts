@@ -29,7 +29,7 @@ export const getFolders = async () => {
         return files
     } catch (error: any) {
         console.error("Error fetching files:", error.message)
-        return null
+        return []
     }
 }
 

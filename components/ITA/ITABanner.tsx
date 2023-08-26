@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image";
 import BannerImage from "@/public/SchoolNameBanner.jpg"
 import Link from "next/link";
