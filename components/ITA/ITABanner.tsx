@@ -8,13 +8,14 @@ type MenuProps = {
     imageTitle? : string
     customBanner? : any
     bgGradient? : string
+    customGoto? : string
 }
 
 const ITABanner = (props: MenuProps) => {
     const divClass = twMerge(`flex sm:h-[50vh] md:h-[35vh] bg-gradient-to-r from-violet-900 via-purple-600 to-pink-50`, props.bgGradient)
     return (
         <div className="flex flex-col items-center justify-center">
-            <Link href={"/ITA/home"}>
+            <Link href={props.customGoto ?? "/ITA" }>
                 <div className={divClass}>
                     <Image
                         src={ props.customBanner ?? BannerImage}

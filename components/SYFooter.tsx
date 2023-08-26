@@ -5,7 +5,7 @@ import Logo from '@/public/logo.png'
 
 export default function SYFooter() {
     return (
-        <footer className="footer p-10 bg-orange-600  text-white justify-center gap-16">
+        <footer className="footer bg-orange-600  text-white justify-center gap-16 p-10">
             <div className='flex justify-center items-center flex-wrap'>
                 <Image
                     src={Logo}

@@ -1,24 +1,29 @@
-import GGDriveIframe from "@/components/ITA/GGDriveIframe"
+
 import ITABanner from "@/components/ITA/ITABanner"
-import { getUrlsFrom } from "@/libs/googleDrive"
+
 import O1Banner from "@/public/ITABanner/B-O18.jpg"
+import Link from "next/link"
 
-export default async function O19Page() {
-  const {
-    PdfUrls,
-    ImageUrls
-  } = await getUrlsFrom("O1 โครงสร้าง")
-
+export default async function O18Page() {
   return (
-    <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-red-200 to-red-100">
-      <ITABanner title="" customBanner={O1Banner} bgGradient="bg-gradient-to-r from-red-900 via-red-600 to-red-50"/>
+    <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-purple-300 to-slate-100 py-6">
+      <ITABanner title="" customBanner={O1Banner} bgGradient="bg-gradient-to-r from-purple-900 via-pink-600 to-slate-50" />
 
-      {
-        PdfUrls ? PdfUrls.map((pdfUrl) => {
-          return <GGDriveIframe url={`https://drive.google.com/file/d/${pdfUrl.id}/preview`} name={pdfUrl.name} key={pdfUrl.id} />
-        })
-        : <></>
-      }
+      <Link href={"http://122.154.112.21/amssplus/"} target="_blank">
+        <div className="flex justify-center items-center link gap-6 text-xl font-bold text-white w-[70vw] md:w-[60vw] xl:w-[40vw] h-40 p-6 bg-gradient-to-r from-orange-700 to-yellow-500 rounded-xl">
+        AMSS++
+
+
+        </div>
+      </Link>
+
+      <Link href={"http://chon2.ksom.net/money/index.php"} target="_blank">
+        <div className="flex justify-center items-center link gap-6 text-xl font-bold text-white w-[70vw] md:w-[60vw] xl:w-[40vw] h-40 p-6 bg-gradient-to-r from-green-700 to-green-500 rounded-xl">
+        ระบบ E-Money
+
+
+        </div>
+      </Link>
 
     </div>
   )

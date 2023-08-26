@@ -31,7 +31,9 @@ export default function RootLayout({
           {
             children
           }
+          <div className='items-end'>
           < SYFooter />
+          </div>
         </div>
 
       </body>

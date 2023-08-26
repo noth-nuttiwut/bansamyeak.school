@@ -1,26 +1,21 @@
-import GGDriveIframe from "@/components/ITA/GGDriveIframe"
 import ITABanner from "@/components/ITA/ITABanner"
-import { getUrlsFrom } from "@/libs/googleDrive"
-import O1Banner from "@/public/ITABanner/B-O28.jpg"
+import O28Banner from "@/public/ITABanner/B-O28.jpg"
+import GGFormiFrame from "@/components/GGFormiFrame"
+
 
 export default async function O28Page() {
-  const {
-    PdfUrls,
-    ImageUrls
-  } = await getUrlsFrom("O1 โครงสร้าง")
 
   return (
-    <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-red-200 to-red-100">
-      <ITABanner title="" customBanner={O1Banner} bgGradient="bg-gradient-to-r from-red-900 via-red-600 to-red-50"/>
+    <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-blue-100 to-slate-100">
+      <ITABanner title="" customBanner={O28Banner} bgGradient="bg-gradient-to-r from-blue-900 via-sky-600 to-slate-50"/>
+      <div className="flex flex-col gap-10 py-10">
+        <GGFormiFrame url="https://docs.google.com/forms/d/e/1FAIpQLSd6PrtNT2ZN4GmG92yjgtUmKpNqIhWnS66JNRpelyCID_7AKA/viewform?embedded=true"
+        name="Q&A"
+        />
 
-      {
-        PdfUrls ? PdfUrls.map((pdfUrl) => {
-          return <GGDriveIframe url={`https://drive.google.com/file/d/${pdfUrl.id}/preview`} name={pdfUrl.name} key={pdfUrl.id} />
-        })
-        : <></>
-      }
+      </div>
+     
 
     </div>
   )
 }
-
