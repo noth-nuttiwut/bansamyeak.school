@@ -31,7 +31,7 @@ export default function CarouselImage(props: carouselImageSetType) {
                     props.images.map((image, index) => {
                         return (
                             <div id={image.id} className="carousel-item w-full justify-center" key={image.id}>
-                                <Image 
+                                <img 
                                     src={`https://drive.google.com/uc?id=${image.id}`}
                                     alt={"carousel-image-" + image.name}
                                     width="100"
