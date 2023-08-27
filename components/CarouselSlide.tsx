@@ -1,5 +1,8 @@
 "use client"
-import Image from "next/image"
+import { useRouter } from 'next/navigation'
+ 
+
+import { useEffect, useRef } from "react"
 
 type GGResponeType = {
     kind: string
@@ -14,6 +17,17 @@ type carouselImageSetType = {
 
 
 export default function CarouselSlide(props: carouselImageSetType) {
+    const nextBtnRef = useRef< HTMLAnchorElement | null>(null)
+    
+    useEffect(() => {
+        const interval = setInterval(() => {
+            console.log("Next ...")
+            nextBtnRef.current?.click()
+          }, 1000);
+          return () => clearInterval(interval);
+    }, [])
+
+
     return (
         <div className="flex justify-center px-10 py-8">
             <div className="carousel w-full" data-carousel="slide">
@@ -34,18 +48,18 @@ export default function CarouselSlide(props: carouselImageSetType) {
                                     index == 0 ? // first Item
                                         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                             <a href={`#GGImage-${index}`} className="btn btn-circle bg-transparent hover:bg-slate-400" data-carousel-prev>❮</a>
-                                            <a href={`#GGImage-${index + 1}`} className="btn btn-circle bg-transparent hover:bg-slate-400" data-carousel-next>❯</a>
+                                            <a href={`#GGImage-${index + 1}`} className="btn btn-circle bg-transparent hover:bg-slate-400" ref={nextBtnRef} data-carousel-next>❯</a>
                                         </div>
                                     : index + 1 == props.images.length ?   // last Item
 
                                         < div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                             <a href={`#GGImage-${index - 1}`} className="btn btn-circle bg-transparent hover:bg-slate-400" data-carousel-prev>❮</a>
-                                            <a href={`#GGImage-0`} className="btn btn-circle bg-transparent hover:bg-slate-400" data-carousel-next>❯</a>
+                                            <a href={`#GGImage-0`} className="btn btn-circle bg-transparent hover:bg-slate-400" ref={nextBtnRef} data-carousel-next>❯</a>
                                         </div>
                                     : // normal item
                                         <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
                                             <a href={`#GGImage-${index - 1}`} className="btn btn-circle bg-transparent hover:bg-slate-400" data-carousel-prev>❮</a>
-                                            <a href={`#GGImage-${index + 1}`} className="btn btn-circle bg-transparent hover:bg-slate-400" data-carousel-next>❯</a>
+                                            <a href={`#GGImage-${index + 1}`} className="btn btn-circle bg-transparent hover:bg-slate-400" ref={nextBtnRef} data-carousel-next>❯</a>
                                         </div>
                                 }
 

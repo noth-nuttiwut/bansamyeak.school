@@ -28,10 +28,10 @@ export default function Navbar() {
                             </ul>
                         </li>
                         <li className="p-2">
-                            <a>ข่าวประชาสัมพันธ์</a>
+                            <Link href="/ITA/O7">ข่าวประชาสัมพันธ์</Link>
                         </li>
                         <li className="p-2">
-                            <a>ภาพกิจกรรม</a>
+                            <Link href="/gallery">ภาพกิจกรรม</Link>
                         </li>
                     </ul>
                 </div>
@@ -66,8 +66,8 @@ export default function Navbar() {
                             </ul>
                         </details>
                     </li>
-                    <li><a>ข่าวประชาสัมพันธ์</a></li>
-                    <li><a>ภาพกิจกรรม</a></li>
+                    <li><Link href="/ITA/O7">ข่าวประชาสัมพันธ์</Link></li>
+                    <li><Link href="/gallery">ภาพกิจกรรม</Link></li>
                 </ul>
             </div>
     
