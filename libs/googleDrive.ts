@@ -1,5 +1,4 @@
-import { getFiles } from "./GGDFL"
-import { getFolders, getFoldersInFolders } from "./GGDFD"
+import { getFolders, getFoldersInFolders, getFiles } from "./utils"
 export type GGResponeType = {
     kind: string
     mimeType: string

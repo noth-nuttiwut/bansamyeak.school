@@ -1,5 +1,7 @@
 import { google } from "googleapis"
 
+export const revalidate = 300
+
 // authenticates the service account to be used in this context
 const auth = new google.auth.GoogleAuth({
     // your credentials to authenticate
@@ -18,6 +20,19 @@ const drive = google.drive({
     version: "v3",
     auth: auth,
 })
+
+export const getFiles = async (folderId: string) => {
+    try {
+        const res = await drive.files.list({
+            q: `'${folderId}' in parents and trashed = false`,
+        })
+        const files = res.data.files
+        return files
+    } catch (error: any) {
+        console.error("Error fetching files:", error.message)
+        return []
+    }
+}
 
 export const getFolders = async () => {
     
