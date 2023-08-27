@@ -7,7 +7,7 @@ export default async function O24Page() {
   const {
     PdfUrls,
     ImageUrls
-  } = await getUrlsFrom("O24 การดำเนินการตามนโยบายการบริหารทรัพยากรบุคคล")
+  } = await getUrlsFrom("O24 ")
 
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-red-200 to-red-100">

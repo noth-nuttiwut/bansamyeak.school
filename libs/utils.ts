@@ -1,6 +1,7 @@
 import { google } from "googleapis"
+import { cache } from "react"
 
-export const revalidate = 300
+export const revalidate = 60
 
 // authenticates the service account to be used in this context
 const auth = new google.auth.GoogleAuth({
@@ -21,7 +22,7 @@ const drive = google.drive({
     auth: auth,
 })
 
-export const getFiles = async (folderId: string) => {
+export const getFiles = cache(async (folderId: string) => {
     try {
         const res = await drive.files.list({
             q: `'${folderId}' in parents and trashed = false`,
@@ -32,9 +33,9 @@ export const getFiles = async (folderId: string) => {
         console.error("Error fetching files:", error.message)
         return []
     }
-}
+})
 
-export const getFolders = async () => {
+export const getFolders = cache(async () => {
     
     try {
         const res = await drive.files.list({
@@ -46,9 +47,9 @@ export const getFolders = async () => {
         console.error("Error fetching files:", error.message)
         return []
     }
-}
+})
 
-export const getFoldersInFolders = async (folderId : string) => {
+export const getFoldersInFolders = cache(async (folderId : string) => {
     
     try {
         const res = await drive.files.list({
@@ -60,5 +61,5 @@ export const getFoldersInFolders = async (folderId : string) => {
         console.error("Error fetching files:", error.message)
         return []
     }
-}
+})
 

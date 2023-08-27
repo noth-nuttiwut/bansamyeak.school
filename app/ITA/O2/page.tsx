@@ -9,7 +9,7 @@ export default async function O2Page () {
   const {
     PdfUrls,
     ImageUrls
-  } = await getUrlsFrom("O2 ข้อมูลผู้บริหาร")
+  } = await getUrlsFrom("O2 ")
 
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-red-200 to-red-100">

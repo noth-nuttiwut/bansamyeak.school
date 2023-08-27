@@ -7,7 +7,7 @@ export default async function O27Page() {
   const {
     PdfUrls,
     ImageUrls
-  } = await getUrlsFrom("O27 แนวปฏิบัติการจัดการเรื่องร้องเรียนการทุจริตและประพฤติมิชอบ")
+  } = await getUrlsFrom("O27 ")
 
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-blue-100 to-slate-100">

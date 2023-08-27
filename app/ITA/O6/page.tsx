@@ -7,7 +7,7 @@ export default async function O6Page () {
   const {
     PdfUrls,
     ImageUrls
-  } = await getUrlsFrom("O6 กฎหมายที่เกี่ยวข้อง")
+  } = await getUrlsFrom("O6 ")
  
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full">

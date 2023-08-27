@@ -7,7 +7,7 @@ export default async function O36Page() {
   const {
     PdfUrls,
     ImageUrls
-  } = await getUrlsFrom("O1 โครงสร้าง")
+  } = await getUrlsFrom("O36 ")
 
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-yellow-100 to-red-100">

@@ -13,13 +13,10 @@ export type urlFromType =  {
 
 
 export const getUrlsFrom = async (folderName: string) => {
-    // const ggUrl = `${process.env.DOMAIN_NAME}/api/google-drive`
-    // const FolderResp = await fetch(ggUrl + "/folders", { next: { revalidate : 15*60 }})
     const allFilesandFolders: any = await getFolders()
     if (allFilesandFolders) {
-        const folderID: GGResponeType[] = allFilesandFolders?.filter((f: GGResponeType) => f.name == folderName)
-        // const filesResp = await fetch(ggUrl + "/files/" + folderID[0]?.id, { next: { revalidate: 600 } })
-
+        const folderID: GGResponeType[] = allFilesandFolders?.filter((f: GGResponeType) => f.name.startsWith(folderName))
+        
         // const FolderResp = await
         const Urls: any = await getFiles(folderID[0]?.id)
         if (Urls) {
@@ -46,7 +43,7 @@ export const getUrlsFrom = async (folderName: string) => {
 export const getFolderByName = async (folderName: string) => {
     const allFilesandFolders: any = await getFolders()
     if (allFilesandFolders) {
-        const folderID: GGResponeType[] = allFilesandFolders?.filter((f: GGResponeType) => f.name == folderName)
+        const folderID: GGResponeType[] = allFilesandFolders?.filter((f: GGResponeType) => f.name.startsWith(folderName))
         const allFolders = await getFoldersInFolders(folderID[0]?.id)
         return allFolders
     }

@@ -7,7 +7,7 @@ export default async function O16Page() {
   const {
     PdfUrls,
     ImageUrls
-  } = await getUrlsFrom("O1 โครงสร้าง")
+  } = await getUrlsFrom("O16 ")
 
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b purple-red-200 to-slate-100">

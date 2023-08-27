@@ -4,7 +4,7 @@ import { getFolderByName } from "@/libs/googleDrive"
 import Link from "next/link"
 
 export default async function O25Page() {
-  const allFolder = await getFolderByName("O25 หลักเกณฑ์การบริหารและพัฒนาทรัพยากรบุคคล")
+  const allFolder = await getFolderByName("O25")
   const newOrderImages = ["1", "2", "3", "4", "5"].map(id => allFolder?.find(el => el.name?.startsWith(id)))
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-red-200 to-red-100">

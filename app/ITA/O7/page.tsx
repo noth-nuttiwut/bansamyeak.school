@@ -8,7 +8,7 @@ export default async function O7Page() {
   const {
     PdfUrls,
     ImageUrls
-  } = await getUrlsFrom("O7 ข่าวประชาสัมพันธ์")
+  } = await getUrlsFrom("O7 ")
 
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-red-200 to-red-100">

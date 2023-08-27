@@ -7,7 +7,7 @@ export default async function O14Page() {
   const {
     PdfUrls,
     ImageUrls
-  } = await getUrlsFrom("O14 คู่มือหรือมาตรฐานการปฏิบัติงาน")
+  } = await getUrlsFrom("O14 ")
 
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b purple-red-200 to-slate-100">

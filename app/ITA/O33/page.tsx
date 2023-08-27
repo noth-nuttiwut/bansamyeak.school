@@ -7,7 +7,7 @@ export default async function O33Page() {
   const {
     PdfUrls,
     ImageUrls
-  } = await getUrlsFrom("O33 รายงานผลตามนโบาย No Gift Policy")
+  } = await getUrlsFrom("O33 ")
 
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-yellow-100 to-red-100">
