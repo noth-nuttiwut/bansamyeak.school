@@ -1,4 +1,4 @@
-import CarouselImage from "@/components/CarouselImage"
+import ImageGalleryComp from "@/components/ImageGallery"
 import GGDriveIframe from "@/components/ITA/GGDriveIframe"
 import ITABanner from "@/components/ITA/ITABanner"
 import { getUrlsFrom } from "@/libs/googleDrive"
@@ -14,7 +14,7 @@ export default async function O37Page() {
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-yellow-100 to-red-100">
       <ITABanner title="" customBanner={O1Banner} bgGradient="bg-gradient-to-r from-amber-900 via-yellow-600 to-slate-50" />
       {
-        ImageUrls ? <CarouselImage images={ImageUrls}/>
+        ImageUrls ? <ImageGalleryComp images={ImageUrls}/>
         : <></>
       }
       {
