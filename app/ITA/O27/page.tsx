@@ -1,3 +1,4 @@
+import CarouselImage from "@/components/CarouselImage"
 import GGDriveIframe from "@/components/ITA/GGDriveIframe"
 import ITABanner from "@/components/ITA/ITABanner"
 import { getUrlsFrom } from "@/libs/googleDrive"
@@ -12,7 +13,10 @@ export default async function O27Page() {
   return (
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-blue-100 to-slate-100">
       <ITABanner title="" customBanner={O1Banner} bgGradient="bg-gradient-to-r from-blue-900 via-sky-600 to-slate-50"/>
-
+      {
+        ImageUrls ? <CarouselImage images={ImageUrls}/>
+        : <></>
+      }
       {
         PdfUrls ? PdfUrls.map((pdfUrl) => {
           return <GGDriveIframe url={`https://drive.google.com/file/d/${pdfUrl.id}/preview`} name={pdfUrl.name} key={pdfUrl.id} />

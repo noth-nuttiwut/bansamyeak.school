@@ -24,7 +24,7 @@ const SectionMenu = (props: SectionProps) => {
     text-white text-xl text-center font-bold p-6 bg-slate-700 w-6 h-6 rounded-l-xl`
     return (
         <div className="px-10">
-            <div className="divider text-lg text-slate-600">{props.sectionName}</div>
+            <div className="divider text-base text-slate-600 font-semibold sm:text-lg md:text-lg xl:text-lg 2xl:text-xl">{props.sectionName}</div>
             <div className="grid xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
                 {
                     props.items.map(item => {
