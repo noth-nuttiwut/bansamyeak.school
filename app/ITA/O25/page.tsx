@@ -30,3 +30,5 @@ export default async function O25Page() {
   )
 }
 
+export const revalidate = 300
+

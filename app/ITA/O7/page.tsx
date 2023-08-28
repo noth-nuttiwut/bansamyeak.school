@@ -21,3 +21,5 @@ export default async function O7Page() {
     </div>
   )
 }
+
+export const revalidate = 300

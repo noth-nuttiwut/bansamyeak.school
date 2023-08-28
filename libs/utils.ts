@@ -1,7 +1,7 @@
 import { google } from "googleapis"
 import { cache } from "react"
 
-export const revalidate = 60
+export const revalidate = 300
 
 // authenticates the service account to be used in this context
 const auth = new google.auth.GoogleAuth({

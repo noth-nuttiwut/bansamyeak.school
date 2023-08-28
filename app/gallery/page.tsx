@@ -29,3 +29,5 @@ export default async function PhotosPage() {
         </div>
     )
 }
+
+export const revalidate = 300

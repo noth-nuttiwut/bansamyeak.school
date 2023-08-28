@@ -23,3 +23,5 @@ export default async function O25F1Page({ params }: { params: { fName: string } 
     </div>
   )
 }
+
+export const revalidate = 300

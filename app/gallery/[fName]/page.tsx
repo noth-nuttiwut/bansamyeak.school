@@ -1,14 +1,9 @@
-
-
-
 import ITABanner from "@/components/ITA/ITABanner"
 import ImageGalleryComp from "@/components/ImageGallery"
 import { getUrlsFrom } from "@/libs/googleDrive"
 import Banner from "@/public/SchoolNameBanner.jpg"
 
 export default async function Page({ params }: { params: { fName: string } }) {
-  console.log("fName :: ", decodeURI(params.fName))
-
   const {
     PdfUrls,
     ImageUrls
@@ -26,3 +21,4 @@ export default async function Page({ params }: { params: { fName: string } }) {
     </div>
   )
 }
+export const revalidate = 300
