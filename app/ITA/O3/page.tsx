@@ -29,3 +29,4 @@ export default async function O3Page () {
     </div>
   )
 }
+export const revalidate = 300

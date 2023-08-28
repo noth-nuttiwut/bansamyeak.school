@@ -23,3 +23,5 @@ export default async function O6Page () {
     </div>
   )
 }
+
+export const revalidate = 300

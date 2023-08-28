@@ -24,3 +24,4 @@ export default async function O27Page() {
   )
 }
 
+export const revalidate = 300

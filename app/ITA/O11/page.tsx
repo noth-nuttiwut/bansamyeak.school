@@ -25,3 +25,4 @@ export default async function O11Page() {
   )
 }
 
+export const revalidate = 300

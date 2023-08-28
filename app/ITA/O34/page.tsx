@@ -24,3 +24,4 @@ export default async function O34Page() {
   )
 }
 
+export const revalidate = 300

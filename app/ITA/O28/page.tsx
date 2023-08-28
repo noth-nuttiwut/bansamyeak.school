@@ -19,3 +19,5 @@ export default async function O28Page() {
     </div>
   )
 }
+
+export const revalidate = 300

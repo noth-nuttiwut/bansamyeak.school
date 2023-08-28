@@ -29,3 +29,4 @@ export default async function O2Page () {
     </div>
   )
 }
+export const revalidate = 300

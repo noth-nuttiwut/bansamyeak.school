@@ -24,5 +24,6 @@ export default async function O1Page() {
     </div>
   )
 }
+export const revalidate = 300
 
 
