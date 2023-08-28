@@ -14,7 +14,7 @@ export default async function O27Page() {
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-blue-100 to-slate-100">
       <ITABanner title="" customBanner={O1Banner} bgGradient="bg-gradient-to-r from-blue-900 via-sky-600 to-slate-50"/>
       {
-        ImageUrls ? <ImageGalleryComp images={ImageUrls}/>
+        ImageUrls.length > 1 ? <ImageGalleryComp images={ImageUrls}/>
         : <></>
       }
       {

@@ -14,7 +14,7 @@ export default async function O15Page() {
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b purple-red-200 to-slate-100">
       <ITABanner title="" customBanner={O15Banner} />
       {
-        ImageUrls ? <ImageGalleryComp images={ImageUrls}/>
+        ImageUrls.length > 1 ? <ImageGalleryComp images={ImageUrls}/>
         : <></>
       }
       {

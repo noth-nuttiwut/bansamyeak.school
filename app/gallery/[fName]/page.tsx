@@ -14,7 +14,7 @@ export default async function Page({ params }: { params: { fName: string } }) {
     <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-purple-200 to-slate-100">
       <ITABanner title="" customBanner={Banner} customGoto="/gallery" />
       {
-        ImageUrls ? <ImageGalleryComp images={ImageUrls} showThumbnails={true} />
+        ImageUrls.length > 1 ? <ImageGalleryComp images={ImageUrls} showThumbnails={true} />
           : <></>
       }
 
