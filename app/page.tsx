@@ -5,6 +5,7 @@ import VideoCard from "@/components/VideoCard"
 import MenuIcon from "@/components/MenuIcon"
 import SideBar from '@/components/SideBar'
 import SimpleMap from '@/components/SimpleGGMap';
+import ImageGalleryComp from "@/components/ImageGallery";
 
 import iconCPE from "@/public/CPE.png"
 import iconESerice from "@/public/e-Service.png"
@@ -17,6 +18,24 @@ import Banner1 from "@/public/Banner-ITA.jpg"
 
 
 export default function Home() {
+  const noImage = [
+    {
+      kind: "",
+      mimeType: "",
+      id: "1FDedfvyasv2ZotHoObgpUj2-d3c0SWqY",
+      name: "NO 1",
+  
+    },
+    {
+      kind: "",
+      mimeType: "",
+      id: "1kLa42dmDgcCXbGc1j390BnxBOzgF71X-",
+      name: "NO 2",
+  
+    }
+  ]
+
+
   return (
     <main className="flex flex-col gap-2 w-full justify-between sm:p-0 md:px-18 md:pb-18 lg:px-24  lg:pb-24 bg-gradient-to-t from-orange-100 to-slate-100">
       <div className={"flex w-full justify-center items-center px-2"}>
@@ -30,10 +49,13 @@ export default function Home() {
         />
       </div>
 
-      <div className="flex flex-wrap lg:flex-nowrap w-full justify-center px-10">
+      <div className="flex flex-wrap lg:flex-nowrap w-full justify-center px-15">
         <SideBar />
         <div className="flex flex-col items-center p-4 gap-6">
           <MenuIcon iconAlt="ITA" iconUrl={iconITA} goTo={"/ITA"} menu="ITA โรงเรียนบ้านสามแยก จังหวัดชลบุรี" imageCss="w-[80vw] md:w-[50vw] lg:w-[30vw]"/>
+
+          <ImageGalleryComp  images={noImage} showThumbnails={false} slideInterval={5000}/>
+
           <VideoCard
             videoName="VTR การติดตาม ตรวจสอบ ประเมินผล และนิเทศการศึกษา โรงเรียนบ้านสามแยก"
             videoUrl="https://www.youtube.com/embed/So-wXVX7RXk?si=pkO1q55rdRRoA05R"

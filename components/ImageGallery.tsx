@@ -12,6 +12,7 @@ type GGResponeType = {
 type carouselImageSetType = {
     images: GGResponeType[]
     showThumbnails?: boolean
+    slideInterval?: number
 }
 
 
@@ -25,8 +26,8 @@ export default function ImageGalleryComp(props: carouselImageSetType) {
     })
 
     return (
-        <div className="w-[80vw] h-auto lg:w-[70vw] xl:w-[60vw] py-8">
-            <ImageGallery items={items} infinite={true} autoPlay={true} slideInterval={8000} thumbnailPosition={"top"} showThumbnails={props.showThumbnails ?? false}/>
+        <div className="w-[85vw] h-auto  lg:w-[50vw] xl:w-[50vw] py-8">
+            <ImageGallery items={items} infinite={true} autoPlay={true} slideInterval={props.slideInterval ?? 8000} thumbnailPosition={"top"} showThumbnails={props.showThumbnails ?? false}/>
         </div>
     )
 }
