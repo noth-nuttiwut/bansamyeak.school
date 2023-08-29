@@ -20,8 +20,8 @@ export const getUrlsFrom = async (folderName: string) => {
         // const FolderResp = await
         const Urls: any = await getFiles(folderID[0]?.id)
         if (Urls) {
-            const ImageUrls: GGResponeType[] = Urls?.filter(( i: GGResponeType) => i?.mimeType?.startsWith("image/"))
-            const PdfUrls: GGResponeType[] = Urls?.filter(( i: GGResponeType) => i?.mimeType?.startsWith("application/"))
+            const ImageUrls: GGResponeType[] = Urls?.filter(( i: GGResponeType) => i?.mimeType?.startsWith("image/")).sort((a : GGResponeType, b: GGResponeType) => a.name.localeCompare(b.name, undefined, { numeric: true }))
+            const PdfUrls: GGResponeType[] = Urls?.filter(( i: GGResponeType) => i?.mimeType?.startsWith("application/")).sort((a : GGResponeType, b: GGResponeType) => a.name.localeCompare(b.name, undefined, { numeric: true }))
             return {
                 PdfUrls,
                 ImageUrls

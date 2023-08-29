@@ -26,6 +26,7 @@ export const getFiles = cache(async (folderId: string) => {
     try {
         const res = await drive.files.list({
             q: `'${folderId}' in parents and trashed = false`,
+            orderBy: "name"
         })
         const files = res.data.files
         return files
@@ -39,7 +40,8 @@ export const getFolders = cache(async () => {
     
     try {
         const res = await drive.files.list({
-            q: 'mimeType=\'application/vnd.google-apps.folder\'',
+            q: "mimeType=\'application/vnd.google-apps.folder\'",
+            orderBy: "name",
         })
         const files = res.data.files
         return files
@@ -54,6 +56,7 @@ export const getFoldersInFolders = cache(async (folderId : string) => {
     try {
         const res = await drive.files.list({
             q: `'${folderId}' in parents and mimeType=\'application/vnd.google-apps.folder\'`,
+            orderBy: "name"
         })
         const files = res.data.files
         return files
