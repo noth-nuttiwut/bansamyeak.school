@@ -10,7 +10,7 @@ export default async function PhotosPage() {
     return (
         <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-purple-200 to-slate-100">
             <ITABanner title="" customBanner={Banner} customGoto="/" />
-            <div className="flex flex-wrap gap-6 p-8 sm:p-4 md:p-10 lg:p-20 xl:p-20 justify-start items-center">
+            <div className="flex flex-wrap gap-6 p-8 xs:p-4 sm:p-4 md:p-10 lg:p-20 xl:p-20 2xl:px-40 2xl:text-xl justify-center">
                 {
                     allFolder 
                     ? allFolder.map((fd, i) => {
