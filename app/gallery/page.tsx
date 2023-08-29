@@ -10,13 +10,13 @@ export default async function PhotosPage() {
     return (
         <div className="flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-purple-200 to-slate-100">
             <ITABanner title="" customBanner={Banner} customGoto="/" />
-            <div className="flex flex-wrap gap-6 p-8 sm:p-4 md:p-10 lg:p-20 xl:p-20 justify-center items-center">
+            <div className="flex flex-wrap gap-6 p-8 sm:p-4 md:p-10 lg:p-20 xl:p-20 justify-start items-center">
                 {
                     allFolder 
                     ? allFolder.map((fd, i) => {
                         return (
                             <Link href={`/gallery/${fd?.name}`} key={fd?.id}>
-                                <div className="flex bg-gradient-to-r text-slate-900 from-yellow-500  to-yellow-300 h-40 w-80 rounded-lg justify-center items-center font-bold break-words">
+                                <div className="flex bg-gradient-to-r text-slate-900 from-yellow-500  to-yellow-300 h-40 w-80 p-8 text-center rounded-lg justify-center items-center font-bold break-words">
                                     {fd?.name}
                                 </div>
                             </Link>

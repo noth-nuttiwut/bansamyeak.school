@@ -12,7 +12,7 @@ export type urlFromType =  {
 }
 
 
-export const getUrlsFrom = async (folderName: string) => {
+export const getUrlsFrom = async (folderName: string, reverse : boolean = false) => {
     const allFilesandFolders: any = await getFolders()
     if (allFilesandFolders) {
         const folderID: GGResponeType[] = allFilesandFolders?.filter((f: GGResponeType) => f.name.startsWith(folderName))
@@ -20,11 +20,11 @@ export const getUrlsFrom = async (folderName: string) => {
         // const FolderResp = await
         const Urls: any = await getFiles(folderID[0]?.id)
         if (Urls) {
-            const ImageUrls: GGResponeType[] = Urls?.filter(( i: GGResponeType) => i?.mimeType?.startsWith("image/")).sort((a : GGResponeType, b: GGResponeType) => a.name.localeCompare(b.name, undefined, { numeric: true }))
+            const ImageUrls: GGResponeType[] = Urls?.filter(( i: GGResponeType) => i?.mimeType?.startsWith("image/")).sort((a : GGResponeType, b: GGResponeType) => a.name.localeCompare(b.name, undefined, { numeric: true }), )
             const PdfUrls: GGResponeType[] = Urls?.filter(( i: GGResponeType) => i?.mimeType?.startsWith("application/")).sort((a : GGResponeType, b: GGResponeType) => a.name.localeCompare(b.name, undefined, { numeric: true }))
             return {
-                PdfUrls,
-                ImageUrls
+                PdfUrls: reverse ? PdfUrls.reverse() : PdfUrls,
+                ImageUrls : reverse ? ImageUrls.reverse(): ImageUrls,
             } 
 
         }

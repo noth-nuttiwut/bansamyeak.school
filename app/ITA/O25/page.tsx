@@ -15,7 +15,7 @@ export default async function O25Page() {
           newOrderImages.map((fd, i) => {
             return (
               <Link href={`/ITA/O25/${fd?.name}`} key={fd?.id}>
-                  <div className="flex bg-gradient-to-r text-slate-900 from-yellow-500  to-yellow-300 h-40 w-80 rounded-lg justify-center items-center font-bold break-words">
+                  <div className="flex bg-gradient-to-r text-slate-900 from-yellow-500  to-yellow-300 h-40 w-80 p-8 text-center rounded-lg justify-center items-center font-bold break-words">
                     { fd?.name }
                   </div>
               </Link>
