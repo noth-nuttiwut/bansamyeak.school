@@ -24,7 +24,9 @@ const ITABanner = (props: MenuProps) => {
                         <Image
                             src={props.customBanner ?? BannerImage}
                             alt={props.imageTitle ?? "ita-banner"}
-                            style={{ objectFit: "scale-down" }}
+                            style={{ objectFit: "contain" }}
+                            width={"2560"}
+                            height={"600"}
                         />
                     </div>
                 </Link>

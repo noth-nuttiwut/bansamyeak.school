@@ -45,7 +45,7 @@ export const getFolderByName = async (folderName: string) => {
     if (allFilesandFolders) {
         const folderID: GGResponeType[] = allFilesandFolders?.filter((f: GGResponeType) => f.name.startsWith(folderName))
         const allFolders = await getFoldersInFolders(folderID[0]?.id)
-        return allFolders
+        return allFolders ?? []
     }
     return []
     

@@ -1,12 +1,8 @@
-import BannerImage from "@/public/ITABanner/B-O1.jpg"
 import GGDriveIframe from "@/components/ITA/GGDriveIframe"
 import ITABanner from "@/components/ITA/ITABanner"
-import { getFolderByName, getUrlsFrom, GGResponeType } from "@/libs/googleDrive"
 import ImageGalleryComp from "@/components/ImageGallery"
-import Link from "next/link"
+import { getUrlsFrom } from "@/libs/googleDrive"
 import { twMerge } from "tailwind-merge"
-
-
 type cssStorageType = {
   OIndex: string
   bgGradient: string
@@ -167,8 +163,11 @@ const cssStorage: cssStorageType [] = [
 ]
 
 
-export default async function AutoGenPage({ params }: { params: { ITAID: string } }) {
-  const allFolder = await getFolderByName(`${params.ITAID} `)
+export default async function ShowFilePage({ params }: { params: { fName: string , ITAID: string } }) {
+  const {
+    PdfUrls,
+    ImageUrls
+  } = await getUrlsFrom(decodeURI(params.fName))
   const cssObject = cssStorage.filter(el => el.OIndex == params.ITAID)[0] ?? {
     OIndex : "O31",
     bgGradient: "bg-gradient-to-r from-amber-700 via-yellow-300 to-slate-50",
@@ -178,61 +177,24 @@ export default async function AutoGenPage({ params }: { params: { ITAID: string 
   const contentBgColor = twMerge("flex flex-col items-center gap-4 justify-center w-full bg-gradient-to-b from-yellow-100 to-yellow-50", cssObject.contentBgColor)
   const bgGradient = cssObject.bgGradient
 
-  if (allFolder?.length >= 1) {
 
-    return (
-      <div className={contentBgColor}>
-        <ITABanner title="" customBanner={`/ITABanner/B-${params.ITAID}.jpg`} bgGradient={bgGradient} />
+  return (
+    <div className={contentBgColor}>
+      <ITABanner title="" customBanner={`/ITABanner/B-${params.ITAID}.jpg`} bgGradient={bgGradient} customGoto={`/ITA/${params.ITAID}`} />
+      {
+        ImageUrls.length > 1 ? <ImageGalleryComp images={ImageUrls}/>
+        : <></>
+      }
 
-        <div className="flex flex-wrap gap-6 p-8 sm:p-4 md:p-10 lg:p-20 xl:p-20 justify-center items-center">
-          {
-            allFolder ?
-              allFolder.map((fd, i) => {
-                return (
-                  <Link href={`/ITA/${params.ITAID}/${fd?.name}`} key={fd?.id}>
-                    <div className="flex bg-gradient-to-r text-slate-900 from-yellow-600 to-yellow-400 
-                    h-40 w-80 p-8 text-center rounded-lg justify-center items-center font-bold break-words">
-                      {fd?.name}
-                    </div>
-                  </Link>
-                )
-              })
-              : <></>
-          }
-        </div>
-      </div>
-    )
+      {
+        PdfUrls ? PdfUrls.map((pdfUrl) => {
+          return <GGDriveIframe url={`https://drive.google.com/file/d/${pdfUrl.id}/preview`} name={pdfUrl.name} key={pdfUrl.id} />
+        })
+        : <></>
+      }
 
-  } else {
-
-    const reverseSort = params.ITAID == "O7" ? true : false
-    const {
-      PdfUrls,
-      ImageUrls
-    } = await getUrlsFrom(`${params.ITAID} `, reverseSort)
-
-    return (
-      <div className={contentBgColor}>
-        <ITABanner title="" customBanner={`/ITABanner/B-${params.ITAID}.jpg`} bgGradient={bgGradient} customGoto={`/ITA/${params.ITAID}`} />
-        {
-          ImageUrls.length > 1 ? <ImageGalleryComp images={ImageUrls} />
-            : <></>
-        }
-
-        {
-          PdfUrls ? PdfUrls.map((pdfUrl) => {
-            return <GGDriveIframe url={`https://drive.google.com/file/d/${pdfUrl.id}/preview`} name={pdfUrl.name} key={pdfUrl.id} />
-          })
-            : <></>
-        }
-
-      </div>
-    )
-
-  }
-
-
-
+    </div>
+  )
 }
-export const revalidate = 300
 
+export const revalidate = 300
