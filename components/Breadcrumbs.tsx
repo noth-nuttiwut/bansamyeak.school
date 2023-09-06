@@ -227,7 +227,7 @@ const Breadcrumbs = () => {
     ]
 
     return (
-        <div className="text-sm breadcrumbs w-screen">
+        <div className="text-sm breadcrumbs">
             <ul>
                 {
                     paths.map((p, i) => {
@@ -244,8 +244,8 @@ const Breadcrumbs = () => {
                         }>
 
                             {
-                                i == 0 ? "หน้าแรก" : isOUrl ?
-                                    <p className="w-fit xl:w-fit md:w-fit xs:w-28 xs:truncate ...">
+                                i == 0 ? "หน้าแรก" : isOUrl || i > 2 ?
+                                    <p className="w-fit xl:w-fit md:w-fit xs:w-44 xs:truncate">
                                         {
                                             displayName ?? ""
                                         }

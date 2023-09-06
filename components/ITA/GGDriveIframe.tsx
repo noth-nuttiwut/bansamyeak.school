@@ -23,7 +23,7 @@ const GGDriveIframe = (props: MenuProps) => {
     const divClass = twMerge(`h-[65vh] sm:w-10/12  md:w-8/12 md:h-[90vw] lg:w-6/12 lg:h-[80vw] xl:w-6/12 xl:h-[70vw] px-10 pb-10`, props.imgCss)
     return (
         <>
-            <div> {props.name} </div>
+            <div className="text-slate-600 text-base xs:text-sm md:text-base lg:text-lg 2xl:text-xl 3xl:text-2xl"> {props.name} </div>
             <div className={divClass} key={props.url}>
                 {
                     loading

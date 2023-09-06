@@ -36,7 +36,7 @@ const ITABanner = (props: MenuProps) => {
                 </div>
 
             </div>
-            <div className="w-full flex justify-start items-start px-16">
+            <div className="w-full flex justify-start items-start px-24 xs:px-4 md:px-8 lg:px-10">
                 <Breadcrumbs />
             </div>
         </>
