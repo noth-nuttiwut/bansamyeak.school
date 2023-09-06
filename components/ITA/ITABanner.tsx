@@ -14,7 +14,7 @@ type MenuProps = {
 }
 
 const ITABanner = (props: MenuProps) => {
-    const divClass = twMerge(`flex sm:h-[50vh] md:h-[35vh] bg-gradient-to-r from-violet-900 via-purple-600 to-pink-50`, props.bgGradient)
+    const divClass = twMerge(`flex pt-8 xl:pt-4 sm:h-[50vh] md:h-[35vh] bg-gradient-to-r from-violet-900 via-purple-600 to-pink-50`, props.bgGradient)
     const titleDiv = twMerge(`flex text-xl text-white p-4 sm:p-1 w-full justify-center break-words sm: text-center bg-gradient-to-r from-violet-900 via-purple-600 to-pink-50`, props.bgGradient)
     return (
         <>
@@ -24,7 +24,7 @@ const ITABanner = (props: MenuProps) => {
                         <Image
                             src={props.customBanner ?? BannerImage}
                             alt={props.imageTitle ?? "ita-banner"}
-                            style={{ objectFit: "contain" }}
+                            style={{ objectFit: "scale-down"}}
                             width={"2560"}
                             height={"600"}
                         />

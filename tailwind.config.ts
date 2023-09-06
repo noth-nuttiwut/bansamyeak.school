@@ -16,7 +16,7 @@ const config: Config = {
       },
     },
     screens: {
-      'xs': '435px',
+      'xs': '350px',
       '3xl': '1920px',
       ...defaultTheme.screens,
       
