@@ -16,7 +16,7 @@ export default function DirectorCard() {
                         width="0"
                         height="0"
                         sizes="20vw"
-                        className="w-[50vw] md:w-[30vw] lg:w-[15vw] xl:w-[10vw] h-auto"
+                        className="w-[40vw] md:w-[35vw] lg:w-[25vw] xl:w-[25vw] 2xl:w-[15vw] h-auto"
                     />
                 </figure>
                 <div className="bg-orange-500 p-4">

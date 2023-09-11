@@ -7,7 +7,7 @@ const Breadcrumbs = () => {
 
     const paths = pathname.split("/")
 
-    const itemNames = [
+    const ITAitems = [
         {
             code: "O1",
             title: "โครงสร้าง",
@@ -226,6 +226,57 @@ const Breadcrumbs = () => {
         },
     ]
 
+    const pageItmes = [
+        {
+            th: "งานวิชาการ",
+            en: "academic"
+        },
+        {
+            th: "ทำเนียบบุคลากร",
+            en: "staff"
+        },
+        {
+            th: "งานงบประมาณ",
+            en: "budget"
+        },
+        {
+            th: "งานบุคคล",
+            en: "human"
+        },
+        {
+            th: "งานบริหารทั่วไป",
+            en: "general-management"
+        },
+        {
+            th: "รายชื่อคณะผู้บริหาร",
+            en: "board-of-directors"
+        },
+        {
+            th: "ภาพกิจกรรม",
+            en: "gallery"
+        },
+        {
+            th: "ประวัติโรงเรียน",
+            en: "history"
+        },
+        {
+            th: "ตราสัญลักษณ์",
+            en: "emblem"
+        },
+        {
+            th: "ปรัชญาโรงเรียน",
+            en: "philosophy"
+        },
+        {
+            th: "วิสัยทัศน์และพันธกิจ",
+            en: "vision-mission"
+        }
+
+        
+
+        
+    ]
+
     return (
         <div className="text-sm breadcrumbs">
             <ul>
@@ -233,8 +284,9 @@ const Breadcrumbs = () => {
                     paths.map((p, i) => {
                         const pathname = decodeURI(p)
                         const isOUrl = pathname.startsWith("O")
+                        const isTranslate = pageItmes.filter(el => el.en == pathname).length > 0
                         
-                        const displayName = isOUrl ? `${pathname} ${itemNames.filter(el => el.code == pathname)[0]?.title}` : pathname
+                        const displayName = isOUrl ? `${pathname} ${ITAitems.filter(el => el.code == pathname)[0]?.title}` : isTranslate ? pageItmes.filter(el => el.en == pathname)[0]?.th :  pathname
                         return <li key={i + 999}><Link href={
                             i == 0 ?
                                 "/" :

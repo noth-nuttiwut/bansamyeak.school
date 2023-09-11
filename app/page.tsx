@@ -37,22 +37,21 @@ export default function Home() {
 
 
   return (
-    <main className="flex flex-col gap-2 w-full justify-between sm:p-0 md:px-18 md:pb-18 lg:px-24  lg:pb-24 bg-gradient-to-t from-orange-100 to-slate-100">
-      <div className={"flex w-full justify-center items-center px-2"}>
+    <main className="flex flex-col gap-2 justify-center items-center sm:p-0 md:px-18 md:pb-18 lg:px-24  lg:pb-24 bg-gradient-to-t from-orange-100 to-slate-100">
+      <div className={"flex w-full justify-center items-center px-2 bg-gradient-to-r from-orange-300 via-orange-100 to-orange-300"}>
         <Image
           src={Banner1}
           alt="Banner1"
-          width="0"
-          height="0"
-          sizes="100vw"
-          className="w-full h-auto lg:w-auto lg:h-[350px]"
+          width="2560"
+          height="600"
+          className="w-full h-auto"
         />
       </div>
 
-      <div className="flex flex-wrap lg:flex-nowrap w-full justify-center px-15">
+      <div className="flex flex-wrap lg:flex-nowrap w-full justify-center px-12">
         <SideBar />
-        <div className="flex flex-col items-center p-4 gap-6">
-          <MenuIcon iconAlt="ITA" iconUrl={iconITA} goTo={"/ITA"} menu="ITA โรงเรียนบ้านสามแยก จังหวัดชลบุรี" imageCss="w-[80vw] md:w-[50vw] lg:w-[30vw]"/>
+        <div className="flex flex-col items-center gap-10">
+          <MenuIcon iconAlt="ITA" iconUrl={iconITA} goTo={"/ITA"} menu="ITA โรงเรียนบ้านสามแยก จังหวัดชลบุรี" imageCss="w-[80vw] md:w-[60vw] lg:w-[50vw] xl:w-[40vw] 2xl:w-[35vw] 3xl:w-[35vw]"/>
 
           <ImageGalleryComp  images={noImage} showThumbnails={false} slideInterval={5000}/>
 
@@ -68,14 +67,14 @@ export default function Home() {
           <SimpleMap />
 
           <div className="flex p-4">
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-10 justify-center items-end">
-              <MenuIcon iconAlt="facebook-5" iconUrl={iconFacebook} goTo={"https://www.facebook.com/bansamyeak"} menu="FB: bansamyeak" imageCss="w-[15vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
-              <MenuIcon iconAlt="Camera-6" iconUrl={iconCamera} goTo={"/gallery"} menu="ภาพกิจกรรม" imageCss="w-[15vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
-              <MenuIcon iconAlt="ebook-3" iconUrl={iconEbook} goTo={"/ITA/O7"} menu="ข่าวสารบ้านสามแยก" imageCss="w-[15vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-2 justify-evenly items-baseline gap-6">
+              <MenuIcon iconAlt="facebook-5" iconUrl={iconFacebook} goTo={"https://www.facebook.com/bansamyeak"} menu="FB: bansamyeak" imageCss="w-[15vw] xs:w-[22vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
+              <MenuIcon iconAlt="Camera-6" iconUrl={iconCamera} goTo={"/gallery"} menu="ภาพกิจกรรม" imageCss="w-[15vw] xs:w-[22vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
+              <MenuIcon iconAlt="ebook-3" iconUrl={iconEbook} goTo={"/ITA/O7"} menu="ข่าวสารบ้านสามแยก" imageCss="w-[15vw] xs:w-[22vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
 
-              <MenuIcon iconAlt="CPE-1" iconUrl={iconCPE} goTo={"https://www.facebook.com/profile.php?id=100076660265075"} menu="สำนักงานเขตพื้นที่การศึกษาประถมศึกษา ชลบุรี เขต 2" imageCss="w-[15vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
-              <MenuIcon iconAlt="AMSS-1" iconUrl={iconAMSS} goTo={"http://122.154.112.21/amssplus/"} menu="รับ-ส่งหนังสือราชการ" imageCss="w-[15vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
-              <MenuIcon iconAlt="Eservice" iconUrl={iconESerice} goTo={"/ITA/O18"} menu="E-Service" imageCss="w-[15vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
+              <MenuIcon iconAlt="CPE-1" iconUrl={iconCPE} goTo={"https://www.facebook.com/profile.php?id=100076660265075"} menu="สำนักงานเขตพื้นที่การศึกษาประถมศึกษา ชลบุรี เขต 2" imageCss="w-[15vw] xs:w-[22vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
+              <MenuIcon iconAlt="AMSS-1" iconUrl={iconAMSS} goTo={"http://122.154.112.21/amssplus/"} menu="รับ-ส่งหนังสือราชการ" imageCss="w-[15vw] xs:w-[22vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
+              <MenuIcon iconAlt="Eservice" iconUrl={iconESerice} goTo={"/ITA/O18"} menu="E-Service" imageCss="w-[15vw] xs:w-[22vw] md:w-[10vw] lg:w-[100px] xl:w-[100px]" />
 
             </div>
           </div>

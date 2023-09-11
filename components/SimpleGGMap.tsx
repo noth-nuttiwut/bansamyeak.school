@@ -12,7 +12,7 @@ export default function SimpleMap() {
 
 
     return (
-        <div className='flex flex-col gap-4 sm:p-4 md:p-6 lg:p-8'>
+        <div className='flex flex-col gap-4 p-4 w-full'>
             <div className='p-2 bg-orange-500 text-center text-white py-4 rounded-sm'>
                 แผนที่ตั้งพิกัดโรงเรียนบ้านสามแยก  อำเภอเกาะจันทร์  จังหวัดชลบุรี
             </div>

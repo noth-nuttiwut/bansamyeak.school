@@ -26,7 +26,7 @@ export default function ImageGalleryComp(props: carouselImageSetType) {
     })
 
     return (
-        <div className="w-[85vw] h-auto md:w-[80vw] lg:w-[60vw] xl:w-[60vw] 2xl:w-[50vw] 3xl:w-[50vw] py-8">
+        <div className="w-[85vw] h-auto md:w-[80vw] lg:w-[60vw] xl:w-[60vw] 2xl:w-[50vw] 3xl:w-[50vw] p-8">
             <ImageGallery items={items} infinite={true} autoPlay={true} slideInterval={props.slideInterval ?? 8000} thumbnailPosition={"top"} showThumbnails={props.showThumbnails ?? false}/>
         </div>
     )

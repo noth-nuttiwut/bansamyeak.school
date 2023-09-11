@@ -2,7 +2,6 @@ import Image from "next/image";
 import BannerImage from "@/public/SchoolNameBanner.jpg"
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
-
 import Breadcrumbs from "@/components/Breadcrumbs"
 
 type MenuProps = {

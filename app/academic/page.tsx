@@ -1,6 +1,6 @@
 import SchoolBanner from "@/public/SchoolNameBanner.jpg"
 import ITABanner from "@/components/ITA/ITABanner"
-import { getUrlsFrom, GGResponeType, urlFromType } from "@/libs/googleDrive"
+import { getUrlsFrom, GGResponeType } from "@/libs/googleDrive"
 import StaffCard from "@/components/StaffCard"
 
 export default async function AcademicPage() {

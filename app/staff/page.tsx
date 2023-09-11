@@ -1,6 +1,5 @@
 import ITABanner from "@/components/ITA/ITABanner"
 import SchoolBanner from "@/public/SchoolNameBanner.jpg"
-import Image from "next/image"
 
 export default async function StaffPage() {
     const image = 

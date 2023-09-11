@@ -2,6 +2,7 @@
 import Image from "next/image";
 import BannerImage from "@/public/SchoolInfoBanner.jpg"
 import Link from "next/link";
+import Breadcrumbs from "../Breadcrumbs";
 
 type MenuProps = {
     title: string
@@ -19,6 +20,9 @@ const SchoolBanner = (props: MenuProps) => {
                     />
                 </div>
             </Link>
+            <div className="w-full flex justify-start items-start px-24 xs:px-4 md:px-8 lg:px-10">
+                <Breadcrumbs />
+            </div>
         </div>
     );
 };
