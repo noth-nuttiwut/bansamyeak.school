@@ -38,13 +38,13 @@ export default function Home() {
 
   return (
     <main className="flex flex-col gap-2 justify-center items-center sm:p-0 md:px-18 md:pb-18 lg:px-24  lg:pb-24 bg-gradient-to-t from-orange-100 to-slate-100">
-      <div className={"flex w-full justify-center items-center px-2 bg-gradient-to-r from-orange-300 via-orange-100 to-orange-300"}>
+      <div className={"flex w-full justify-center items-center px-2 bg-gradient-to-r from-orange-50 via-orange-600 to-orange-50"}>
         <Image
           src={Banner1}
           alt="Banner1"
           width="2560"
           height="600"
-          className="w-full h-auto"
+          className="w-full h-auto 3xl:w-[70vw] 2xl:w-[70vw]"
         />
       </div>
 

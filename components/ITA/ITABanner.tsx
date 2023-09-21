@@ -13,7 +13,7 @@ type MenuProps = {
 }
 
 const ITABanner = (props: MenuProps) => {
-    const divClass = twMerge(`flex pt-8 xl:pt-4 sm:h-[50vh] md:h-[35vh] bg-gradient-to-r from-violet-900 via-purple-600 to-pink-50`, props.bgGradient)
+    const divClass = twMerge(`flex py-4 sm:py-0 xs:py-4 sm:h-[50vh] md:h-[35vh]  bg-gradient-to-r from-violet-900 via-purple-600 to-pink-50`, props.bgGradient)
     const titleDiv = twMerge(`flex text-xl text-white p-4 sm:p-1 w-full justify-center break-words sm: text-center bg-gradient-to-r from-violet-900 via-purple-600 to-pink-50`, props.bgGradient)
     return (
         <>
@@ -30,7 +30,7 @@ const ITABanner = (props: MenuProps) => {
                     </div>
                 </Link>
 
-                <div className={props.title == "" ? titleDiv : "flex bg-orange-500 text-xl text-white p-4 sm:p-1 w-full justify-center break-words sm: text-center"}>
+                <div className={props.title == "" ? titleDiv : "flex bg-orange-500 text-xl text-white p-4 sm:p-1 w-full justify-center break-words sm: text-center xs:text-sm" }>
                     {props.title}
                 </div>
 
