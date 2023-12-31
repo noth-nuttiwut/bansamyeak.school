@@ -14,13 +14,15 @@ const auth = new google.auth.GoogleAuth({
     // all CRUD operations are permissed, check out
     // [ https://developers.google.com/drive/api/guides/api-specific-auth ]
     // for more advice on scopes
-    scopes: ["https://www.googleapis.com/auth/drive"],
+    scopes: ["https://www.googleapis.com/auth/drive", 'https://www.googleapis.com/auth/spreadsheets'],
 })
 
 const drive = google.drive({
     version: "v3",
     auth: auth,
 })
+const service = google.sheets({version: 'v4', auth});
+
 
 export const getFiles = cache(async (folderId: string) => {
     try {
@@ -64,5 +66,27 @@ export const getFoldersInFolders = cache(async (folderId : string) => {
         console.error("Error fetching files:", error.message)
         return []
     }
+})
+
+export const getSpreadSheetData = cache(async (spreadsheetId : string) => {
+    try {
+        const result: any = await service.spreadsheets.values.get({
+            spreadsheetId,
+            range: 'A1:B100',
+        });
+
+        const jsonData : any = [];
+        result.data.values.forEach((element : any) => {
+            jsonData.push({
+                name : element[0],
+                url : element[1]
+            })
+        });
+        return jsonData;
+        
+      } catch (err) {
+
+        return []
+      }
 })
 
