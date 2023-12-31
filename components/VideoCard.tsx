@@ -19,7 +19,7 @@ export default function VideoCard(props: VideoProps) {
         maxHeight: "768px"
     }
 
-    const divClass = twMerge(`flex card justify-center sm:p-4 md:p-6 lg:p-10 gap-4 round-xl`, props.videoCss)
+    const divClass = twMerge(`flex card justify-center sm:p-4 md:p-6 lg:p-10 gap-4 round-xl items-center`, props.videoCss)
     return (
         <div className={divClass}>
             <div className="bg-orange-500 sm:text-nm lg:text-xl text-white p-4 rounded-sm break-words"> {props.videoName}</div>
