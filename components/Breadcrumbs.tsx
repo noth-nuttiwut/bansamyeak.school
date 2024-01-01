@@ -4,6 +4,7 @@ import Link from "next/link"
 
 const Breadcrumbs = () => {
     const pathname = usePathname()
+    const full_pathname = usePathname()
 
     const paths = pathname.split("/")
 
@@ -284,19 +285,35 @@ const Breadcrumbs = () => {
                     paths.map((p, i) => {
                         const pathname = decodeURI(p)
                         const isOUrl = pathname.startsWith("O")
+                        const isVideoPath = pathname.startsWith("&name=")
+
+                        const vInfo = new URLSearchParams(full_pathname)
+                        const displayVideoName = vInfo.get("name") ?? ""
+
+                        var r = /^[a-zA-Z0-9]+$/
+                        const isSubject = !r.test(pathname.slice(3,4))
+
+
                         const isTranslate = pageItmes.filter(el => el.en == pathname).length > 0
                         
-                        const displayName = isOUrl ? `${pathname} ${ITAitems.filter(el => el.code == pathname)[0]?.title}` : isTranslate ? pageItmes.filter(el => el.en == pathname)[0]?.th :  pathname
-                        return <li key={i + 999}><Link href={
+                        let displayName = isOUrl ? `${pathname} ${ITAitems.filter(el => el.code == pathname)[0]?.title}` 
+                                                    : isTranslate ? pageItmes.filter(el => el.en == pathname)[0]?.th 
+                                                    :  pathname
+                        
+                        displayName = isVideoPath ? displayVideoName : displayName 
+                        
+                        return <li key={i + 999}>
+                            <Link href={
                             i == 0 ?
                                 "/" :
-                                isOUrl ?
-                                    `/ITA/${pathname}`
-                                    : `/${pathname}`
-                        }>
+                                isOUrl ? `/ITA/${pathname}`
+                                : isSubject ? `/e-learning/${pathname}`
+                                : `/${pathname}`
+                            }>
 
                             {
-                                i == 0 ? "หน้าแรก" : isOUrl || i > 2 ?
+                                i == 0 ? "หน้าแรก" 
+                                : isOUrl || i > 2 ?
                                     <p className="w-fit xl:w-fit md:w-fit xs:w-44 xs:truncate">
                                         {
                                             displayName ?? ""
