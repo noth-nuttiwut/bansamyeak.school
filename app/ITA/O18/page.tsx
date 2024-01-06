@@ -13,7 +13,6 @@ export default async function O18Page() {
         <div className="flex justify-center items-center link gap-6 text-xl font-bold text-white w-[70vw] md:w-[60vw] xl:w-[40vw] h-40 p-6 bg-gradient-to-r from-orange-700 to-yellow-500 rounded-xl">
         AMSS++
 
-
         </div>
       </Link>
 
@@ -21,6 +20,12 @@ export default async function O18Page() {
         <div className="flex justify-center items-center link gap-6 text-xl font-bold text-white w-[70vw] md:w-[60vw] xl:w-[40vw] h-40 p-6 bg-gradient-to-r from-green-700 to-green-500 rounded-xl">
         ระบบ E-Money
 
+        </div>
+      </Link>
+
+      <Link href={"/e-learning"}>
+        <div className="flex justify-center items-center link gap-6 text-xl font-bold text-white w-[70vw] md:w-[60vw] xl:w-[40vw] h-40 p-6 bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900 rounded-xl">
+        ระบบ E-Learning
 
         </div>
       </Link>
