@@ -20,6 +20,11 @@ export default function VideoCard(props: VideoProps) {
     }
 
     const divClass = twMerge(`flex card justify-center sm:p-4 md:p-6 lg:p-10 gap-4 round-xl items-center`, props.videoCss)
+    var id_pattern = new RegExp("/file/d/.+/");
+    const ggDriveID = id_pattern.exec(props.videoUrl)?.[0].replace("/file/d/", "").slice(0, -1)
+    // const videoUrl = props.videoUrl.includes("drive.google.com") ? 
+    //         `https://drive.google.com/uc?id=${ggDriveID}`
+    //         : props.videoUrl
     return (
         <div className={divClass}>
             <div className="bg-orange-500 sm:text-nm lg:text-xl text-white p-4 rounded-sm break-words"> {props.videoName}</div>

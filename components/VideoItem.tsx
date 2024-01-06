@@ -30,7 +30,7 @@ export default function VideoItem(props: VideoSectionProps) {
                             <Link key={item.goto} href={item.goto} className="bg-white text-black" >
                                 <div className={menuCss}>
                                     <div className={"card-body"}>
-                                        <p> {item.title} </p>
+                                        <div className="text-gray-100 text-lg text-center drop-shadow-md font-semibold"> {item.title} </div>
                                     </div>
                                 </div>
                             </Link>

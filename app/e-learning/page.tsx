@@ -3,7 +3,7 @@ import VideoItem from "@/components/VideoItem"
 import Breadcrumbs from "@/components/Breadcrumbs"
 
 
-type SubjectFolder = {
+export type SubjectFolder = {
   bgGradient: string
   contentBgColor: string
 
@@ -15,26 +15,31 @@ type googleDriveResp = {
   name: string
 }
 
-const cssStorage: SubjectFolder[] = [
+export const cssStorage: SubjectFolder[] = [
 
   {
-    bgGradient: "bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500",
+    bgGradient: "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-green-300 via-blue-600 to-purple-600",
     contentBgColor: "bg-gradient-to-b from-rose-100 to-slate-50"
   },
   {
-    bgGradient: "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900",
+    bgGradient: "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-rose-400 via-fuchsia-500 to-indigo-500",
     contentBgColor: "bg-gradient-to-b from-purple-100 to-slate-50"
   },
 
   {
-    bgGradient: "bg-gradient-to-r from-rose-700 to-pink-600",
+    bgGradient: "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gray-300 via-fuchsia-600 to-orange-600",
     contentBgColor: "bg-gradient-to-b from-lime-100 to-slate-50"
   },
 
   {
-    bgGradient: "bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500",
+    bgGradient: "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-yellow-200 via-orange-400 to-yellow-600",
     contentBgColor: "bg-gradient-to-b from-pink-100 to-slate-50"
   },
+  {
+    bgGradient: "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-200 via-violet-600 to-sky-900",
+    contentBgColor: "bg-gradient-to-b from-pink-100 to-slate-50"
+  },
+  
   {
     bgGradient: "bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900",
     contentBgColor: "bg-gradient-to-b from-sky-100 to-slate-50"
@@ -52,13 +57,9 @@ const cssStorage: SubjectFolder[] = [
     contentBgColor: "bg-gradient-to-b from-sky-100 to-slate-50"
   },
   {
-    bgGradient: "bg-gradient-to-r from-yellow-600 to-red-600",
+    bgGradient: "bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900",
     contentBgColor: "bg-gradient-to-b from-sky-100 to-slate-50"
   },
-
-
-
-
 
 ]
 
@@ -73,7 +74,7 @@ export default async function Subjects() {
   }))
 
   return (
-    <div className="flex flex-col items-center min-h-fit gap-4 bg-gradient-to-b from-orange-100 to-orange-50">
+    <div className="flex flex-col items-center min-h-fit gap-4 bg-gradient-to-b from-amber-100 to-yellow-50">
       <div className="w-full flex justify-start items-start px-24 xs:px-4 md:px-8 lg:px-10">
         <Breadcrumbs />
       </div>

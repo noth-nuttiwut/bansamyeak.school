@@ -1,60 +1,7 @@
 import Breadcrumbs from '@/components/Breadcrumbs'
 import VideoItem from '@/components/VideoItem'
 import { getFolderByName, getVideoUrlFromSpreadSheet } from '@/libs/googleDrive'
-import { useSearchParams } from 'next/navigation'
-
-type SubjectFolder = {
-  bgGradient: string
-  contentBgColor: string
-
-}
-
-const cssStorage: SubjectFolder[] = [
-
-  {
-    bgGradient: "bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500",
-    contentBgColor: "bg-gradient-to-b from-rose-100 to-slate-50"
-  },
-  {
-    bgGradient: "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900",
-    contentBgColor: "bg-gradient-to-b from-purple-100 to-slate-50"
-  },
-
-  {
-    bgGradient: "bg-gradient-to-r from-rose-700 to-pink-600",
-    contentBgColor: "bg-gradient-to-b from-lime-100 to-slate-50"
-  },
-
-  {
-    bgGradient: "bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500",
-    contentBgColor: "bg-gradient-to-b from-pink-100 to-slate-50"
-  },
-  {
-    bgGradient: "bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900",
-    contentBgColor: "bg-gradient-to-b from-sky-100 to-slate-50"
-  },
-  {
-    bgGradient: "bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-sky-400 to-indigo-900",
-    contentBgColor: "bg-gradient-to-b from-sky-100 to-slate-50"
-  },
-  {
-    bgGradient: "bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600",
-    contentBgColor: "bg-gradient-to-b from-sky-100 to-slate-50"
-  },
-  {
-    bgGradient: "bg-gradient-to-r from-purple-800 via-violet-900 to-purple-800",
-    contentBgColor: "bg-gradient-to-b from-sky-100 to-slate-50"
-  },
-  {
-    bgGradient: "bg-gradient-to-r from-yellow-600 to-red-600",
-    contentBgColor: "bg-gradient-to-b from-sky-100 to-slate-50"
-  },
-
-
-
-
-
-]
+import { cssStorage } from '../page'
 
 export default async function ShowSingleVideo({ params }: { params: { sname: string } }) {
   const subjectName = decodeURI(params.sname)
