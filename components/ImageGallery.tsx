@@ -19,10 +19,17 @@ type carouselImageSetType = {
 export default function ImageGalleryComp(props: carouselImageSetType) {
 
     const items = props.images.map(item => {
+        // return {
+        //     original : `https://drive.google.com/uc?id=${item.id}`,
+        //     thumbnail : `https://drive.google.com/uc?id=${item.id}`
+        // }
         return {
-            original : `https://drive.google.com/uc?id=${item.id}`,
-            thumbnail : `https://drive.google.com/uc?id=${item.id}`
+            original : `https://lh3.googleusercontent.com/d/${item.id}?authuser=0`,
+            thumbnail : `https://lh3.googleusercontent.com/d/${item.id}?authuser=0`
         }
+
+
+        
     })
 
     return (
