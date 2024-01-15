@@ -1,9 +1,10 @@
 
 "use client"
-import Calendar from './Calendar';
+import MiniCalendar from './Calendar';
 import DirectorCard from './DirectorCard';
 import MenuButton from './MenuButton';
 import ChatbotButton from './ChatbotButton';
+
 
 export default function SideBar() {
     return (
@@ -23,7 +24,7 @@ export default function SideBar() {
 
 
             <div className='flex justify-center'>
-                <Calendar />
+                <MiniCalendar />
             </div>
             
             <div className='fixed z-[6000] bottom-10 right-8 '>
