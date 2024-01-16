@@ -13,14 +13,24 @@ export default async function StaffPage() {
             <ITABanner title="" customBanner={SchoolBanner} />
 
             <div id={image.id} className="carousel-item w-full justify-center py-4" key={image.id}>
-                <img
+                {/* <img
                     src={`https://drive.google.com/uc?id=${image.id}`}
                     alt={"StaffPage-" + image.name}
                     width="100"
                     height="100"
                     sizes="60vw"
                     className="w-[80vw] md:w-[60vw] lg:w-[60vw] h-auto"
+                /> */}
+                 <img
+                    src={`https://lh3.googleusercontent.com/d/${image.id}?authuser=0`}
+                    alt={"StaffPage-" + image.name}
+                    width="100"
+                    height="100"
+                    sizes="60vw"
+                    className="w-[80vw] md:w-[60vw] lg:w-[60vw] h-auto"
                 />
+
+
             </div>
 
 
