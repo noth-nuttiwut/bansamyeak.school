@@ -15,27 +15,19 @@ import iconFacebook from "@/public/facebook.png"
 import iconCamera from "@/public/Camera.png"
 import iconITA from "@/public/ITALogo_2.png"
 import Banner1 from "@/public/Banner-ITA.jpg"
+import { getUrlsFrom, getVideoUrlFromSpreadSheet } from "@/libs/googleDrive";
 
 
-export default function Home() {
-  const noImage = [
-    {
-      kind: "",
-      mimeType: "",
-      id: "1FDedfvyasv2ZotHoObgpUj2-d3c0SWqY",
-      name: "NO 1",
+
+type videoInfo = {
+  url: string
+  name: string
+}
+
+export default async function Home() {
+  const VideoUrls = await getVideoUrlFromSpreadSheet("วิดีโอโฮมเพจ")
+  const ImageUrls = await getUrlsFrom("รูปภาพโฮมเพจ") 
   
-    },
-    {
-      kind: "",
-      mimeType: "",
-      id: "1kLa42dmDgcCXbGc1j390BnxBOzgF71X-",
-      name: "NO 2",
-  
-    }
-  ]
-
-
   return (
     <main className="flex flex-col gap-2 justify-center items-center sm:p-0 md:px-18 md:pb-18 lg:px-24  lg:pb-24 bg-gradient-to-t from-orange-100 to-slate-100">
       <div className={"flex w-full justify-center items-center px-2 bg-gradient-to-r from-orange-50 via-orange-600 to-orange-50"}>
@@ -53,17 +45,21 @@ export default function Home() {
         <div className="flex flex-col items-center gap-10">
           <MenuIcon iconAlt="ITA" iconUrl={iconITA} goTo={"/ITA"} menu="ITA โรงเรียนบ้านสามแยก จังหวัดชลบุรี" imageCss="w-[80vw] md:w-[60vw] lg:w-[50vw] xl:w-[40vw] 2xl:w-[35vw] 3xl:w-[35vw]"/>
 
-          <ImageGalleryComp  images={noImage} showThumbnails={false} slideInterval={5000}/>
+          <ImageGalleryComp  images={ImageUrls.ImageUrls} showThumbnails={false} slideInterval={5000}/>
 
-          <VideoCard
-            videoName="VTR การติดตาม ตรวจสอบ ประเมินผล และนิเทศการศึกษา โรงเรียนบ้านสามแยก"
-            videoUrl="https://www.youtube.com/embed/So-wXVX7RXk?si=pkO1q55rdRRoA05R"
-          />
-          <VideoCard
-            videoName="VTR โรงเรียนคุณธรรม สพฐ. ระดับ 2 ดาว โรงเรียนบ้านสามแยก"
-            videoUrl="https://www.youtube.com/embed/3qXQ8YKVGqc?si=eRQTEYijax2hEB5Q"
-          />
-          
+          {/* videos section  */}
+          {
+            VideoUrls.map((videoInfo : videoInfo)=> {
+              return (
+                <VideoCard
+                  key={videoInfo.url}
+                  videoName={videoInfo.name}
+                  videoUrl={videoInfo.url}
+                />
+              )
+            })
+          }
+        
           <SimpleMap />
 
           <div className="flex p-4">
@@ -85,3 +81,4 @@ export default function Home() {
     </main>
   )
 }
+export const revalidate = 300
