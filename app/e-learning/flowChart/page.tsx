@@ -19,7 +19,7 @@ export default  function FlashPlayer() {
     <div>
       <script src="/ruffle-nightly/ruffle.js" async></script>
 
-      <div className="flex flex-col items-center gap-10 bg-gradient-to-b from-purple-300 to-slate-50">
+      <div className="flex flex-col items-center gap-10 bg-gradient-to-b from-purple-300 to-purple-100">
         <ITABanner title="" />
 
         <div className="p-8 bg-pink-600 text-white font-bold rounded-md text-2xl">
@@ -27,7 +27,7 @@ export default  function FlashPlayer() {
         </div>
 
         <div className="flex justify-center min-h-screen">
-          <object className="h-screen w-[90vw] px-2 pb-2 md:px-8 md:pb-8">
+          <object className="h-[90vh] w-[90vw] px-4 pb-4 md:px-8 md:pb-8">
             <embed src={filePath} width="100%" height="100%" 
               title=""
               className="w-full aspect-video"
