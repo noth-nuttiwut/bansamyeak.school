@@ -1,8 +1,6 @@
 "use client"
-import { useRouter } from 'next/navigation'
- 
-
 import { useEffect, useRef } from "react"
+import Image from 'next/image'
 
 type GGResponeType = {
     kind: string
@@ -36,7 +34,7 @@ export default function CarouselSlide(props: carouselImageSetType) {
                     props.images.map((image, index) => {
                         return (
                             <div key={image.id} id={"GGImage-" + index} className="carousel-item relative w-full justify-center" data-carousel-item>
-                                <img src={`https://drive.google.com/uc?id=${image.id}`}
+                                <Image src={`https://drive.google.com/uc?id=${image.id}`}
                                     alt={"carousel-image-" + image.name}
                                     width={0}
                                     height={0}

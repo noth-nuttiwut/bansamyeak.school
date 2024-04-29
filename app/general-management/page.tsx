@@ -10,7 +10,7 @@ export default async function GenManagementPage() {
   } = await getUrlsFrom("งานบริหารทั่วไป")
 
   const headImage = ImageUrls.filter(p => p.name.includes("ปวิชญา  ธิมะดี"))[0]
-  const headInfo = headImage.name.replace(".jpg", "").split("_")
+  const headInfo = headImage?.name.replace(".jpg", "").split("_") ?? ["", "", ""]
   const memberImages = ImageUrls.filter(p => !p.name.includes("ปวิชญา  ธิมะดี"))
   const newOrderImages : GGResponeType | any = ["อรอนงค์", "สุพรรษา", "วิชัย"].map(name => memberImages.find(i => i.name.includes(name)) )
   return (
@@ -18,14 +18,14 @@ export default async function GenManagementPage() {
       <ITABanner title="งานบริหารทั่วไป" customBanner={SchoolBanner} customGoto="/"/>
 
       <div className="flex flex-col flex-wrap p-6 justify-center items-center gap-10">
-        <StaffCard name={headInfo[0]} id={headImage.id} jobTile={headInfo[1]} role={headInfo[2]} key={headImage.id}/>
+        <StaffCard name={headInfo[0]} id={headImage?.id} jobTile={headInfo[1]} role={headInfo[2]} key={headImage?.id}/>
         <div className="flex flex-wrap justify-center gap-6"> 
         {
           newOrderImages ? newOrderImages.map((staffInfo : GGResponeType) => {
-            const staffInfoSplitted = staffInfo.name.replace(".jpg", "").split("_")
+            const staffInfoSplitted = staffInfo?.name.replace(".jpg", "").split("_") ?? ["", "", ""]
 
             return (
-              <StaffCard name={staffInfoSplitted[0]} id={staffInfo.id} jobTile={staffInfoSplitted[1]} role={staffInfoSplitted[2]} key={staffInfo.id} />
+              <StaffCard name={staffInfoSplitted[0]} id={staffInfo?.id} jobTile={staffInfoSplitted[1]} role={staffInfoSplitted[2]} key={staffInfo?.id} />
             )
           }) : <></>
         }
